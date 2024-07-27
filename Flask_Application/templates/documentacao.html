@@ -40,24 +40,6 @@
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Verifica se o modo escuro está salvo no localStorage
-            if (localStorage.getItem('dark-mode') === 'enabled') {
-                $('body').addClass('dark-mode');
-                $('#toggle-dark-mode').prop('checked', true);
-            }
-
-            $('#toggle-dark-mode').change(function() {
-                $('body').toggleClass('dark-mode');
-                // Salva a preferência do usuário no localStorage
-                if ($('body').hasClass('dark-mode')) {
-                    localStorage.setItem('dark-mode', 'enabled');
-                } else {
-                    localStorage.setItem('dark-mode', 'disabled');
-                }
-            });
-        });
-    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

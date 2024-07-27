@@ -37,7 +37,7 @@ $(document).ready(function() {
                 contentType: 'application/json',
                 data: JSON.stringify({message: message}),
                 success: function (data) {
-                    $('#chat-messages').append('<div class="message bot"><img src="static/helix-pic.png" alt="Bot"><div class="message-content">' + escapeHtml(data.response) + '</div></div>');
+                    $('#chat-messages').append('<div class="message bot"><img src="/static/images/helix-pic.png" alt="Bot"><div class="message-content">' + escapeHtml(data.response) + '</div></div>');
                     $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
                 }
             });
