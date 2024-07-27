@@ -458,3 +458,46 @@ input:checked + .slider:before {
     background-position: center;
     border-radius: 20px;
 }
+
+/* Documentação */
+
+.container {
+    max-width: 1200px;
+    margin: 100px auto;
+    padding: 20px;
+}
+.icon-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+.icon-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    text-align: center;
+    margin-left: 50px;
+    padding: 60px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.icon-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+.icon-item i {
+    font-size: 60px;
+    color: #333;
+    margin-bottom: 10px;
+}
+.icon-item p {
+    margin: 0;
+    font-size: 18px;
+    color: #666;
+}
+.icon-item a {
+    text-decoration: none;
+    color: inherit;
+}

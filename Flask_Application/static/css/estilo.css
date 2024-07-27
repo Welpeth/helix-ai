@@ -1,0 +1,264 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#menu {
+    width: 250px;
+    height: 100vh;
+    background-color: #042c58;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#menu h2 {
+    margin-top: 0;
+    color: white;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#menu ul {
+    margin-top: 250px;
+    list-style: none;
+    padding: 10px;
+}
+
+#menu ul li {
+    margin: 10px 0;
+}
+
+#menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    padding: 30px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#menu ul li a:hover {
+    background-color: #0056b3;
+}
+
+#logo {
+    display: block;
+    width: 200px;
+    height: 60px;
+    background-image: url('/static/images/image1.png');
+    background-size: cover;
+    background-position: center;
+    margin: 20px 0; /* Espaçamento adequado */
+}
+
+#github {
+    display: flex;
+    margin-left: 30px;
+    margin-top: 210px;
+}
+
+#github_symbol {
+    width: 50px;
+    height: 50px;
+    background-image: url('/static/images/image3.png');
+    background-size: cover;
+    background-position: center;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+
+#linkedin {
+    display: flex;
+    margin-left: 150px;
+    margin-top: -40px;
+}
+
+#linkedin_symbol {
+    width: 35px;
+    height: 35px;
+    background-image: url('/static/images/image4.png');
+    background-size: cover;
+    background-position: center;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+
+
+#my_image {
+    width: 200px;
+    height: 60px;
+    margin-top:400px;
+    margin-left:20px;
+    background-image: url('/static/images/image1.png');
+    background-size: cover;
+    background-position: center;
+    display: block;
+    border: none;
+    cursor: pointer;
+}
+
+#my_imagesec {
+    margin-top: -569px;
+    width: 200px;
+    height: 200px;
+    margin-left: 20px;
+    background-image: url('/static/images/image2.png');
+    background-size: cover;
+    background-position: center;
+    display: block;
+}
+
+.container {
+    margin-left: 350px; /* Espaço suficiente para o menu */
+    padding: 20px;
+    flex-grow: 1;
+}
+.icon-grid {
+     /* Espaço suficiente para o menu */
+    margin-left: 320px;
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+.icon-item {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 150px;
+    height: 150px;
+    text-align: center;
+    padding: 20px;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+.icon-item a {
+    color: #04709a;
+    text-decoration: none;
+}
+.icon-item i {
+    font-size: 84px;
+    display: block;
+    margin-bottom: 10px;
+}
+.icon-item p {
+    margin: 0;
+    padding: 10px;
+    font-size: 14px;
+}
+.icon-item:hover {
+    background-color: #f0f0f0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#titulo-da-pagina h1 {
+    text-align: center;
+    margin-left: 300px;
+    margin-top: 200px;
+    color: #04709a;
+}
+
+/* Estilos para o switch */
+#dark-mode-toggle {
+    margin-top: -175px;
+    display: flex;
+    align-items: center;
+    margin-left: 10px;
+}
+
+#dark-mode-toggle label {
+    font-size: 14px; /* Ajustado para melhorar a legibilidade */
+    color: #fff; /* Cor do texto para contraste com o fundo escuro */
+    display: flex; /* Flexbox para alinhamento do texto e switch */
+    margin-top: -500px;
+    align-items: center; /* Alinha verticalmente o texto e o switch */
+    margin-left: 10px; /* Espaço entre o símbolo e o texto */
+}
+
+#dark-mode-toggle i {
+    margin-top: -1px;
+    margin-right: 5px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    margin-top: -800px;
+    width: 50px; /* Tamanho ajustado */
+    height: 28px; /* Tamanho ajustado */
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    height: 18px; /* Tamanho ajustado */
+    width: 40px; /* Tamanho ajustado */
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 11px; /* Tamanho ajustado */
+    width: 11px; /* Tamanho ajustado */
+    border-radius: 50%;
+    left: 4px;
+    bottom: 3px; /* Ajustado para alinhar verticalmente */
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: #005eff;
+}
+
+input:checked + .slider:before {
+    transform: translateX(22px); /* Ajustado para o novo tamanho */
+}
+
+/* Estilos para o modo escuro */
+.dark-mode {
+    background-color: #121212;
+    color: #e0e0e0;
+}
+
+.dark-mode #menu {
+    background-color: #042c58;
+    color: #e0e0e0;
+}
+
+.dark-mode #menu a {
+    color: #e0e0e0;
+}
+
+.dark-mode #menu a:hover {
+    background-color: #333;
+}
+
+.dark-mode .icon-item {
+    background-color: #333;
+}

@@ -5,20 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Documentação</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/estilo.css')}}">
 </head>
 <body>
+    <div id ="titulo-da-pagina">
+        <h1>Documentação, Arquivos do Drive</h1>
+    </div>
     <div id="menu">
         <ul>
             <li><a href="/sobre"><i class="fas fa-user"></i> Sobre</a></li>
             <li><a href="/documentacao"><i class="fa fa-file"></i> Documentação</a></li>
             <li><a href="/"><i class="fa-solid fa-microchip"></i> Helix AI</a></li>
         </ul>
+        <!-- Adiciona o botão de dark mode -->
         <div id="my_imagesec"></div>
         <div id="helix-ai-symbol">
             <a href="https://github.com/Welpeth/neuralbot" target="_blank">
                 <div id="my_image"></div>
             </a>
+        </div>
+        <div id="dark-mode-toggle">
+            <label for="toggle-dark-mode"><i class="fa-solid fa-circle-half-stroke"></i> Habilitar Dark Mode</label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-dark-mode">
+                <span class="slider"></span>
+            </label>
         </div>
         <div id="github">
             <a href="https://github.com/Welpeth" target="_blank">
@@ -30,13 +41,89 @@
                 <div id="linkedin_symbol"></div>
             </a>
         </div>
-        <!-- Adiciona o botão de dark mode -->
-        <div id="dark-mode-toggle">
-            <label for="toggle-dark-mode"><i class="fa-solid fa-circle-half-stroke"></i> Habilitar Dark Mode</label>
-            <label class="switch">
-                <input type="checkbox" id="toggle-dark-mode">
-                <span class="slider"></span>
-            </label>
+    </div>
+    <div class="container_second">
+        <h1>Documentação</h1>
+        <div class="icon-grid">
+            <!-- Ícones -->
+            <!-- Ícone 1 -->
+            <div class="icon-item">
+                <a href="https://docs.google.com/spreadsheets/d/1pxgkAofdJULurDVWC4oGlGI7uOdQOe4Nm0mU7e1pNxM/edit?usp=sharing" target="_blank">
+                    <i class="fa-solid fa-clipboard-list"></i>
+                    <p>Relatório</p>
+                </a>
+            </div>
+            <!-- Ícone 3 -->
+            <div class="icon-item">
+                <a href="https://docs.google.com/document/d/147hPfeIBm1SzricrVaPskvs1x1rslBAHqmnKjSr9yF0/edit?usp=sharing" target="_blank">
+                    <i class="fa-solid fa-print"></i>
+                    <p>Problemas com Impressoras</p>
+                </a>
+            </div>
+            <!-- Ícone 4 -->
+            <div class="icon-item">
+                <a href="https://docs.google.com/document/d/1rDIwYBpFYYo-T4De4QEkqgv5X-unlq1fTtKyJvrgIak/edit?usp=drive_link" target="_blank">
+                    <i class="fa-solid fa-hard-drive"></i>
+                    <p>Problemas com Permissões</p>
+                </a>
+            </div>
+            <!-- Ícone 5 -->
+            <div class="icon-item">
+                <a href="https://link5.com" target="_blank">
+                    <i class="fa-solid fa-tv"></i>
+                    <p>Problemas com TVs</p>
+                </a>
+            </div>
+            <!-- Ícone 6 -->
+            <div class="icon-item">
+                <a href="https://docs.google.com/document/d/1ClGRKI8SvvL4Jk8tPW04RrOmQRSIy0MsTKoodlL63tI/edit?usp=sharing" target="_blank">
+                    <i class="fa-solid fa-wifi"></i>
+                    <p>Problemas com Conexão</p>
+                </a>
+            </div>
+            <!-- Ícone 7 -->
+         <div class="icon-item">
+                <a href="https://docs.google.com/document/d/1pYeeszNexcnvGAHnJQ4rjJHHiIm1bEHidTyYN3lOklc/edit?usp=sharing" target="_blank">
+                    <i class="fa-solid fa-folder"></i>
+                    <p>Problemas com Pastas</p>
+                </a>
+            </div>
+       <!--      
+            <div class="icon-item">
+                <a href="https://link8.com" target="_blank">
+                    <i class="fas fa-chart-line"></i>
+                    <p>Ícone 8 - Relatórios</p>
+                </a>
+            </div>
+            
+            <div class="icon-item">
+                <a href="https://link9.com" target="_blank">
+                    <i class="fas fa-bell"></i>
+                    <p>Ícone 9 - Notificações</p>
+                </a>
+            </div>
+            
+            <div class="icon-item">
+                <a href="https://link10.com" target="_blank">
+                    <i class="fas fa-lock"></i>
+                    <p>Ícone 10 - Segurança</p>
+                </a>
+            </div>
+            
+            <div class="icon-item">
+                <a href="https://link11.com" target="_blank">
+                    <i class="fas fa-lock"></i>
+                    <p>Ícone 11 - Segurança</p>
+                </a>
+            </div>
+            
+            <div class="icon-item">
+                <a href="https://link12.com" target="_blank">
+                    <i class="fas fa-lock"></i>
+                    <p>Ícone 12 - Segurança</p>
+                </a>
+            </div>
+        -->  
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>

@@ -142,10 +142,7 @@
                 "Estou enfrentando dificuldades de rede"
             ],
             "responses": [
-                "Pode detalhar um pouco mais o seu problema com redes?",
-                "Caso o cliente esteja com problemas de conexão, como o Blockbit por exemplo, você deve fazer um caminho alternativo no navegador dessa pessoa para que se possa botar o login (PMT) que liberará acesso à rede novamente, simples assim.",
-                "Se o problema for com a conexão e você estiver usando o Blockbit, tente acessar o login (PMT) via um caminho alternativo no navegador. O Blockbit é um firewall que controla o tráfego de dados e pode estar bloqueando sua conexão por questões de segurança. Verifique se o Blockbit está configurado corretamente para evitar bloqueios indevidos.",
-                "Em casos de problemas de conexão, como quando o Blockbit está ativo, você pode usar um caminho alternativo no navegador para inserir o login (PMT) e liberar o acesso à rede. Lembre-se de que o Blockbit é um firewall que filtra dados, então pode ser necessário ajustar as configurações para garantir que a conexão não seja bloqueada."
+                "Pode detalhar um pouco mais o seu problema com redes?"
             ]
         },
         {
