@@ -145,58 +145,108 @@
                 "Pode detalhar um pouco mais o seu problema com redes?"
             ]
         },
-        {
-            "tag": "info-redes-conexao",
-            "patterns": [
-                "É um problema de conexão",
-                "Estou enfrentando um problema de conexão",
-                "O problema é com a conexão",
-                "A conexão está falhando",
-                "Não consigo me conectar à rede",
-                "A rede não está funcionando",
-                "Não consigo acessar a rede",
-                "Não há conexão com a rede"
-            ],
-            "responses": [
-                "Caso o cliente esteja com problemas de conexão, como o Blockbit por exemplo, você deve fazer um caminho alternativo no navegador dessa pessoa para que se possa botar o login (PMT) que liberará acesso à rede novamente, simples assim.",
-                "Se o problema for com a conexão e você estiver usando o Blockbit, tente acessar o login (PMT) via um caminho alternativo no navegador. O Blockbit é um firewall que controla o tráfego de dados e pode estar bloqueando sua conexão por questões de segurança. Verifique se o Blockbit está configurado corretamente para evitar bloqueios indevidos.",
-                "Em casos de problemas de conexão, como quando o Blockbit está ativo, você pode usar um caminho alternativo no navegador para inserir o login (PMT) e liberar o acesso à rede. Lembre-se de que o Blockbit é um firewall que filtra dados, então pode ser necessário ajustar as configurações para garantir que a conexão não seja bloqueada."
-            ]
-        },
-        {
-            "tag": "info-redes-conexao-adaptadores",
-            "patterns": [
-                "A rede não está sendo reconhecida",
-                "Não aparece nenhum ícone de conexão de rede",
-                "A rede do computador não é reconhecida",
-                "O computador está sem rede",
-                "A rede não reconhece",
-                "Problema no adaptador",
-                "É um problema no adaptador",
-                "É nos adaptadores",
-                "É um problema nos adaptadores",
-                "Adaptador de rede não detectado",
-                "A rede não está sendo reconhecida"
-            ],
-            "responses": [
-                "Algumas vezes o cliente pode acabar ficando impaciente com a demora do reconhecimento de rede do computador, ainda que seja a cabo, às vezes esse problema acontece, e existem diversos fatores que podem influenciar isso. De qualquer modo, caso o cliente tenha redefinido o adaptador de Ethernet pela solução de problemas do Windows, isso é um grande problema… Mas relaxe, tudo pode ser resolvido. \n\nPrimeiramente, acesse o painel de controle, vá em redes e, logo depois, central de redes e compartilhamento; em seguida, clique no Ethernet, propriedades, protocolo IP (TCP/IPV4).\n\nNo caso é necessário saber o IP da máquina que estamos configurando novamente."
-            ]
-        },
-        {
-            "tag": "info-redes-pastas",
-            "patterns": [
-                "É um problema de pastas",
-                "Estou enfrentando problemas com as pastas",
-                "As pastas estão falhando",
-                "Não consigo explorar uma pasta do servidor",
-                "É um problema com a pasta do servidor",
-                "É um problema de pastas",
-                "Não consigo acessar pasta F",
-                "Não consigo entrar na pasta F"
-            ],
-            "responses": [
-                "Caso o cliente esteja enfrentando problemas de acesso à pasta do servidor a pasta F, temos que sempre providenciar o caminho a essa pasta pois ela contém todas as informações e ferramentas interessantes que fará nossas vidas muito mais fáceis.\n\nRaramente esse problema vem à tona, mas caso aconteça, você tem que\n\nIr no Explorador de arquivos, Este Computador, clique com o botão direito, Adicionar local da rede, em seguida adicionar o caminho e mudar o nome para F:\n\n\\\\SRV-FS-01\\fs$\\PMT\n\nCaso seja uma pasta específica, substitua “arquivo” pelo nome do arquivo que você precisa:\n\n\\\\SRV-FS-01\\fs$\\arquivo"
-            ]
-        }
-    ]
-}
+            {
+                    "tag": "admin_login",
+                    "patterns": [
+                        "Estou com problemas para instalar um programa",
+                        "Preciso de permissões de administrador",
+                        "Não consigo adicionar usuários à rede",
+                        "Estou recebendo uma mensagem de erro de permissão",
+                        "Como faço para obter permissões de administrador?",
+                        "A instalação do programa requer permissões de administrador",
+                        "Não consigo acessar uma configuração que requer permissões",
+                        "O que fazer quando pedem login de administrador?"
+                    ],
+                    "responses": [
+                        "Para resolver problemas de instalação ou alterações que requerem permissões de administrador, você deve fazer login com um usuário que tenha privilégios administrativos. Normalmente, esse usuário é chamado de 'interno.simplifica'.",
+                        "Se você está recebendo uma mensagem de erro de permissão, tente deslogar do seu usuário atual e fazer login com um usuário administrador. Em seguida, acesse o Painel de Controle e tente realizar a ação novamente.",
+                        "Verifique se o usuário com o qual você está logado tem permissões de administrador. Se não, faça login com o usuário apropriado e tente realizar a operação desejada."
+                    ]
+                },
+                {
+                    "tag": "admin_login_instructions",
+                    "patterns": [
+                        "Como faço login como administrador?",
+                        "Quais são os passos para mudar para um usuário administrador?",
+                        "Como acessar o Painel de Controle como administrador?",
+                        "O que fazer após fazer login como administrador?",
+                        "Quais são as etapas para realizar uma instalação com permissões administrativas?",
+                        "administrador",
+                        "login de administrador",
+                        "login"
+                    ],
+                    "responses": [
+                        "Primeiro, deslogue do usuário atual e faça login com o usuário 'interno.simplifica', que é o administrador. Depois, abra o Painel de Controle e siga os passos para realizar a alteração necessária nos usuários administrativos locais do computador.",
+                        "Após fazer login com um usuário administrador, abra o Painel de Controle e acesse as configurações ou programas necessários. Se for uma instalação, inicie o processo de instalação e siga as instruções na tela.",
+                        "Certifique-se de estar logado com um usuário que tenha permissões de administrador. Em seguida, acesse o Painel de Controle e verifique se você pode realizar a instalação ou adicionar mais usuários administrativos locais."
+                    ]
+                },
+                {
+                    "tag": "network_access_issue",
+                    "patterns": [
+                        "Não consigo acessar a rede",
+                        "A rede está bloqueada",
+                        "Estou enfrentando problemas de acesso à rede",
+                        "Qual é a solução para problemas de acesso a rede?",
+                        "A rede não está funcionando corretamente",
+                        "Como resolver problemas de acesso à rede?",
+                        "Conexão",
+                        "um problema com conexão",
+                        "e problema com conexão",
+                        "problema de conexao"
+                    ],
+                    "responses": [
+                        "Se você está enfrentando problemas de acesso à rede, pode ser necessário inserir um login (PMT) através de um caminho alternativo no navegador para liberar o acesso. Verifique se o Blockbit ou outro firewall não está bloqueando sua conexão.",
+                        "Para problemas de rede, especialmente com o Blockbit ativo, tente usar um caminho alternativo no navegador para inserir o login (PMT). Isso pode ajudar a liberar o acesso à rede.",
+                        "Certifique-se de que não há configurações de firewall ou bloqueios que estejam impedindo o acesso. Utilize um caminho alternativo para inserir o login (PMT) e resolver o problema de acesso à rede."
+                    ]
+                },
+                {
+                    "tag": "network_adapter_issue",
+                    "patterns": [
+                        "O adaptador de rede não está sendo reconhecido",
+                        "Não vejo o ícone de conexão de rede",
+                        "Problemas com o adaptador de rede",
+                        "A rede não é detectada",
+                        "O adaptador de rede não aparece",
+                        "Como resolver problemas com adaptadores de rede?",
+                        "Não consigo me conectar a rede",
+                        "O cliente reiniciou o adaptador",
+                        "O cliente mexeu no adaptador",
+                        "adaptadores",
+                        "é um problema com adaptadores",
+                        "a rede nao reconhece",
+                        "a rede nao aparece"
+                    ],
+                    "responses": [
+                        "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
+                        "Caso o adaptador de rede não esteja sendo detectado, acesse o Painel de Controle e vá para Configurações de Rede. Verifique se o adaptador está habilitado e, se necessário, redefina as configurações de rede, inserindo manualmente o IP, DNS e etc na Central de Rede e Compartilhamento.",
+                        "Verifique as configurações do adaptador de rede em 'Central de Redes e Compartilhamento' (TCP/IPV4) e certifique-se de que está configurado corretamente."
+                    ]
+                },
+                {
+                    "tag": "folder_access_issue",
+                    "patterns": [
+                        "Não consigo acessar uma pasta",
+                        "Acesso negado a pasta do servidor",
+                        "Estou enfrentando problemas com uma pasta",
+                        "Como resolver problemas de acesso a pastas?",
+                        "Não consigo explorar uma pasta específica",
+                        "Qual é a solução para problemas de pasta no servidor?",
+                        "É um problema de pastas",
+                        "Estou enfrentando problemas com as pastas",
+                        "As pastas estão falhando",
+                        "Não consigo explorar uma pasta do servidor",
+                        "É um problema com a pasta do servidor",
+                        "É um problema de pastas",
+                        "Não consigo acessar pasta F",
+                        "Não consigo entrar na pasta F"
+                    ],
+                    "responses": [
+                        "Se você está enfrentando problemas de acesso a uma pasta do servidor, vá ao Explorador de Arquivos, clique com o botão direito em 'Este Computador', escolha 'Adicionar local de rede', e adicione o caminho da pasta \\\\SRV-FS-01\\fs$\\PMT.",
+                        "Para problemas de acesso a pastas, adicione o local da rede no Explorador de Arquivos. Use o caminho apropriado, por exemplo, \\\\SRV-FS-01\\fs$\\PMT, e certifique-se de que o nome está correto.",
+                        "Caso não consiga acessar uma pasta, adicione-a manualmente no Explorador de Arquivos. Insira o caminho da pasta e ajuste o nome conforme necessário para acessar a pasta desejada \\\\SRV-FS-01\\fs$\\PMT."
+                ]
+            }
+        ]
+    }

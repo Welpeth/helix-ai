@@ -63,7 +63,9 @@ train_y = np.array([t[1] for t in training])
 
 # Construir e treinar o modelo
 model = Sequential()
-model.add(Dense(512, input_shape=(len(train_x[0]),), activation='relu'))  # Aumentado para 512 neurônios
+model.add(Dense(1024, input_shape=(len(train_x[0]),), activation='relu'))  # Aumentado para 1024 neurônios
+model.add(Dropout(0.5))
+model.add(Dense(512, activation='relu'))  # Aumentado para 512 neurônios
 model.add(Dropout(0.5))
 model.add(Dense(256, activation='relu'))  # Aumentado para 256 neurônios
 model.add(Dropout(0.5))
@@ -77,7 +79,7 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
 model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
 
-model.fit(np.array(train_x), np.array(train_y), epochs=1000, batch_size=5, verbose=1)
+model.fit(np.array(train_x), np.array(train_y), epochs=1200, batch_size=5, verbose=1)
 
 # Salvar o modelo treinado
 model.save('model/chatbot_model.keras')
