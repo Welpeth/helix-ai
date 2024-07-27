@@ -1,0 +1,205 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Olá",
+                "Oi",
+                "Bom dia",
+                "Boa tarde",
+                "Boa noite",
+                "Ei",
+                "Como vai?",
+                "Saudações",
+                "Olá, tudo bem?",
+                "Oi, como você está?",
+                "Tem alguém aí?",
+                "Ola"
+            ],
+            "responses": [
+                "Olá, como posso ajudar?",
+                "Oi",
+                "O que posso fazer por você?",
+                "Saudações! Em que posso te ajudar hoje?",
+                "Bom dia! Como posso assisti-lo?",
+                "Boa tarde! O que posso fazer por você hoje?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Tchau",
+                "Adeus",
+                "Estou indo embora",
+                "Até logo",
+                "Até mais",
+                "Nos vemos depois",
+                "Vou sair agora",
+                "Adeus, até a próxima"
+            ],
+            "responses": [
+                "Adeus, humano",
+                "De nada",
+                "Adeus!",
+                "Adeus, tenha um ótimo dia!",
+                "Até logo! Se precisar, estarei por aqui.",
+                "Nos vemos na próxima vez!"
+            ]
+        },
+        {
+            "tag": "how",
+            "patterns": [
+                "Como está você?",
+                "Como foi seu dia?",
+                "Como você está se sentindo?",
+                "Como você está hoje?",
+                "Como tem passado?",
+                "Qual é o seu estado de espírito?",
+                "Como você se sente",
+                "Como você esta?",
+                "Como foi seu dia?"
+            ],
+            "responses": [
+                "Estou bem, obrigado por perguntar!",
+                "Estou ótimo, obrigado! Como posso ajudá-lo?",
+                "Como uma IA, não tenho sentimentos, mas estou pronto para ajudar!",
+                "Estou aqui para ajudar. E você, como está?",
+                "Estou funcionando normalmente, obrigado!",
+                "Estou bem, obrigado por perguntar.",
+                "Estou bem, como sou uma máquina, não tenho sentimentos ou preferências pessoais, mas obrigado por perguntar"
+            ]
+        },
+        {
+            "tag": "not_understood",
+            "patterns": [
+                "Não entendi",
+                "Não compreendi",
+                "Pode repetir?",
+                "Não ficou claro",
+                "Você pode explicar de outra forma?",
+                "Desculpe, não entendi",
+                "Napoleao",
+                "Qual é o problema?",
+                "Eu não entendi"
+            ],
+            "responses": [
+                "Desculpe, não entendi a sua pergunta. Você poderia reformular ou fornecer mais detalhes?",
+                "Não consegui compreender o que você disse. Pode explicar melhor?",
+                "Poderia ser mais específico? Não entendi.",
+                "Desculpe, não consegui captar o que você quer dizer. Pode detalhar mais?",
+                "Desculpe, não consegui encontrar uma resposta para sua pergunta."
+            ]
+        },
+        {
+            "tag": "support",
+            "patterns": [
+                "Preciso de ajuda",
+                "Como posso resolver um problema?",
+                "Você pode me ajudar?",
+                "Estou com dificuldades",
+                "Preciso da sua ajuda",
+                "Estou enfrentando um problema"
+            ],
+            "responses": [
+                "Claro, estou aqui para ajudar. Por favor, descreva o problema.",
+                "Posso tentar ajudar. Qual é o problema?",
+                "Farei o meu melhor para ajudar. O que você precisa?",
+                "Com certeza! O que você está enfrentando?",
+                "Estou pronto para ajudar. Qual é o problema?"
+            ]
+        },
+        {
+            "tag": "name",
+            "patterns": [
+                "Qual é o seu nome?",
+                "Como você se chama?",
+                "Qual é o seu nome completo?",
+                "Como você é chamado?",
+                "Qual nome você usa?",
+                "Pode me dizer seu nome?"
+            ],
+            "responses": [
+                "Meu nome é Helix",
+                "Sou chamado de Helix",
+                "Sou Helix, prazer",
+                "Meu nome é Helix.",
+                "Sou conhecido como Helix.",
+                "Eu sou Helix, seu assistente virtual."
+            ]
+        },
+        {
+            "tag": "info-redes",
+            "patterns": [
+                "Ajuda com redes",
+                "Tenho um problema com redes",
+                "Estou com problema com as redes",
+                "Estou com dificuldades em redes",
+                "É um problema com redes",
+                "Preciso de ajuda com redes",
+                "Estou com problemas de rede",
+                "Minha rede está com problemas",
+                "Há um problema com a rede",
+                "Estou enfrentando dificuldades de rede"
+            ],
+            "responses": [
+                "Pode detalhar um pouco mais o seu problema com redes?",
+                "Caso o cliente esteja com problemas de conexão, como o Blockbit por exemplo, você deve fazer um caminho alternativo no navegador dessa pessoa para que se possa botar o login (PMT) que liberará acesso à rede novamente, simples assim.",
+                "Se o problema for com a conexão e você estiver usando o Blockbit, tente acessar o login (PMT) via um caminho alternativo no navegador. O Blockbit é um firewall que controla o tráfego de dados e pode estar bloqueando sua conexão por questões de segurança. Verifique se o Blockbit está configurado corretamente para evitar bloqueios indevidos.",
+                "Em casos de problemas de conexão, como quando o Blockbit está ativo, você pode usar um caminho alternativo no navegador para inserir o login (PMT) e liberar o acesso à rede. Lembre-se de que o Blockbit é um firewall que filtra dados, então pode ser necessário ajustar as configurações para garantir que a conexão não seja bloqueada."
+            ]
+        },
+        {
+            "tag": "info-redes-conexao",
+            "patterns": [
+                "É um problema de conexão",
+                "Estou enfrentando um problema de conexão",
+                "O problema é com a conexão",
+                "A conexão está falhando",
+                "Não consigo me conectar à rede",
+                "A rede não está funcionando",
+                "Não consigo acessar a rede",
+                "Não há conexão com a rede"
+            ],
+            "responses": [
+                "Caso o cliente esteja com problemas de conexão, como o Blockbit por exemplo, você deve fazer um caminho alternativo no navegador dessa pessoa para que se possa botar o login (PMT) que liberará acesso à rede novamente, simples assim.",
+                "Se o problema for com a conexão e você estiver usando o Blockbit, tente acessar o login (PMT) via um caminho alternativo no navegador. O Blockbit é um firewall que controla o tráfego de dados e pode estar bloqueando sua conexão por questões de segurança. Verifique se o Blockbit está configurado corretamente para evitar bloqueios indevidos.",
+                "Em casos de problemas de conexão, como quando o Blockbit está ativo, você pode usar um caminho alternativo no navegador para inserir o login (PMT) e liberar o acesso à rede. Lembre-se de que o Blockbit é um firewall que filtra dados, então pode ser necessário ajustar as configurações para garantir que a conexão não seja bloqueada."
+            ]
+        },
+        {
+            "tag": "info-redes-conexao-adaptadores",
+            "patterns": [
+                "A rede não está sendo reconhecida",
+                "Não aparece nenhum ícone de conexão de rede",
+                "A rede do computador não é reconhecida",
+                "O computador está sem rede",
+                "A rede não reconhece",
+                "Problema no adaptador",
+                "É um problema no adaptador",
+                "É nos adaptadores",
+                "É um problema nos adaptadores",
+                "Adaptador de rede não detectado",
+                "A rede não está sendo reconhecida"
+            ],
+            "responses": [
+                "Algumas vezes o cliente pode acabar ficando impaciente com a demora do reconhecimento de rede do computador, ainda que seja a cabo, às vezes esse problema acontece, e existem diversos fatores que podem influenciar isso. De qualquer modo, caso o cliente tenha redefinido o adaptador de Ethernet pela solução de problemas do Windows, isso é um grande problema… Mas relaxe, tudo pode ser resolvido. \n\nPrimeiramente, acesse o painel de controle, vá em redes e, logo depois, central de redes e compartilhamento; em seguida, clique no Ethernet, propriedades, protocolo IP (TCP/IPV4).\n\nNo caso é necessário saber o IP da máquina que estamos configurando novamente."
+            ]
+        },
+        {
+            "tag": "info-redes-pastas",
+            "patterns": [
+                "É um problema de pastas",
+                "Estou enfrentando problemas com as pastas",
+                "As pastas estão falhando",
+                "Não consigo explorar uma pasta do servidor",
+                "É um problema com a pasta do servidor",
+                "É um problema de pastas",
+                "Não consigo acessar pasta F",
+                "Não consigo entrar na pasta F"
+            ],
+            "responses": [
+                "Caso o cliente esteja enfrentando problemas de acesso à pasta do servidor a pasta F, temos que sempre providenciar o caminho a essa pasta pois ela contém todas as informações e ferramentas interessantes que fará nossas vidas muito mais fáceis.\n\nRaramente esse problema vem à tona, mas caso aconteça, você tem que\n\nIr no Explorador de arquivos, Este Computador, clique com o botão direito, Adicionar local da rede, em seguida adicionar o caminho e mudar o nome para F:\n\n\\\\SRV-FS-01\\fs$\\PMT\n\nCaso seja uma pasta específica, substitua “arquivo” pelo nome do arquivo que você precisa:\n\n\\\\SRV-FS-01\\fs$\\arquivo"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentação</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            background-color: #f5f5f5;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        #menu {
+            width: 250px;
+            height: 100vh;
+            background-color: #042c58;
+            position: fixed;
+            top: 0;
+            left: 0;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        }
+
+        #menu h2 {
+            margin-top: 0;
+            color: white;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #menu ul {
+            margin-top: 250px;
+            list-style: none;
+            padding: 10px;
+        }
+
+        #menu ul li {
+            margin: 10px 0;
+        }
+
+        #menu ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            padding: 30px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        #menu ul li a:hover {
+            background-color: #092f58;
+        }
+
+        #my_imagesec {
+            margin-top: -570px;
+            width: 200px;
+            height: 200px;
+            margin-left: 20px;
+            background-image: url('static/image2.png');
+            background-size: cover;
+            background-position: center;
+            display: block;
+        }
+
+        #helix-ai-symbol {
+            display: flex;
+            margin-left: 20px;
+            margin-top: 400px;
+        }
+
+        #my_image {
+            width: 200px;
+            height: 60px;
+            background-image: url('static/image1.png');
+            background-size: cover;
+            background-position: center;
+            display: block;
+            border: none;
+            cursor: pointer;
+        }
+
+        #github {
+            display: flex;
+            margin-left: 30px;
+            margin-top: 40px;
+        }
+
+        #github_symbol {
+            width: 50px;
+            height: 50px;
+            background-image: url('static/image3.png');
+            background-size: cover;
+            background-position: center;
+            display: block;
+            border: none;
+            cursor: pointer;
+        }
+
+        #linkedin {
+            display: flex;
+            margin-left: 150px;
+            margin-top: -42px;
+        }
+
+        #linkedin_symbol {
+            width: 35px;
+            height: 35px;
+            background-image: url('static/image4.png');
+            background-size: cover;
+            background-position: center;
+            display: block;
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Estilos para o switch de dark mode */
+        #dark-mode-toggle {
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            margin-left: 10px;
+        }
+
+        #dark-mode-toggle label {
+            font-size: 14px; /* Ajustado para melhorar a legibilidade */
+            color: #fff; /* Cor do texto para contraste com o fundo escuro */
+            display: flex; /* Flexbox para alinhamento do texto e switch */
+            margin-top: -1150px;
+            align-items: center; /* Alinha verticalmente o texto e o switch */
+            margin-left: 10px; /* Espaço entre o símbolo e o texto */
+        }
+
+        #dark-mode-toggle i {
+            margin-top: -1px;
+            margin-right: 5px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            margin-top: -1150px;
+            width: 50px; /* Tamanho ajustado */
+            height: 28px; /* Tamanho ajustado */
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            left: 0;
+            height: 18px; /* Tamanho ajustado */
+            width: 38px; /* Tamanho ajustado */
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 12px; /* Tamanho ajustado */
+            width: 12px; /* Tamanho ajustado */
+            border-radius: 50%;
+            left: 4px;
+            bottom: 3px; /* Ajustado para alinhar verticalmente */
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked + .slider {
+            background-color: #005eff;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(18px);
+        }
+
+        /* Estilos para o modo escuro */
+        .dark-mode {
+            background-color: #121212;
+            color: #e0e0e0;
+        }
+
+        .dark-mode #menu {
+            background-color: #042c58;
+            color: #e0e0e0;
+        }
+
+        .dark-mode #menu a {
+            color: #e0e0e0;
+        }
+
+        .dark-mode #menu a:hover {
+            background-color: #333;
+        }
+
+        .dark-mode #content {
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+        }
+
+        .dark-mode #about-section p {
+            color: #e0e0e0;
+        }
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <ul>
+            <li><a href="/sobre"><i class="fas fa-user"></i> Sobre</a></li>
+            <li><a href="/documentacao"><i class="fa fa-file"></i> Documentação</a></li>
+            <li><a href="/"><i class="fa-solid fa-microchip"></i> Helix AI</a></li>
+        </ul>
+        <div id="my_imagesec"></div>
+        <div id="helix-ai-symbol">
+            <a href="https://github.com/Welpeth/neuralbot" target="_blank">
+                <div id="my_image"></div>
+            </a>
+        </div>
+        <div id="github">
+            <a href="https://github.com/Welpeth" target="_blank">
+                <div id="github_symbol"></div>
+            </a>
+        </div>
+        <div id="linkedin">
+            <a href="https://linkedin.com/in/henrique-josé-dias-pereira-9a821a273" target="_blank">
+                <div id="linkedin_symbol"></div>
+            </a>
+        </div>
+        <!-- Adiciona o botão de dark mode -->
+        <div id="dark-mode-toggle">
+            <label for="toggle-dark-mode"><i class="fa-solid fa-circle-half-stroke"></i> Habilitar Dark Mode</label>
+            <label class="switch">
+                <input type="checkbox" id="toggle-dark-mode">
+                <span class="slider"></span>
+            </label>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            // Verifica se o modo escuro está salvo no localStorage
+            if (localStorage.getItem('dark-mode') === 'enabled') {
+                $('body').addClass('dark-mode');
+                $('#toggle-dark-mode').prop('checked', true);
+            }
+
+            $('#toggle-dark-mode').change(function() {
+                $('body').toggleClass('dark-mode');
+                // Salva a preferência do usuário no localStorage
+                if ($('body').hasClass('dark-mode')) {
+                    localStorage.setItem('dark-mode', 'enabled');
+                } else {
+                    localStorage.setItem('dark-mode', 'disabled');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
