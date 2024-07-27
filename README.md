@@ -1,6 +1,6 @@
 # Bem-vindo ao HELIX AI
 
-![Helix AI](Flask_Application/static/image1.png)
+![Helix AI](Flask_Application/static/images/image1.png)
 
 Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar padrões e responder perguntas.
 
