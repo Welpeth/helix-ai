@@ -56,6 +56,7 @@
                 "Como tem passado?",
                 "Qual é o seu estado de espírito?",
                 "Como você se sente",
+                "Como vc se sente",
                 "Como você esta?",
                 "Como foi seu dia?"
             ],
@@ -145,101 +146,177 @@
                 "Pode detalhar um pouco mais o seu problema com redes?"
             ]
         },
-            {
-                    "tag": "admin_login",
+        {
+            "tag": "admin_login",
+            "patterns": [
+                "Estou com problemas para instalar um programa",
+                "Preciso de permissões de administrador",
+                "Não consigo adicionar usuários à rede",
+                "Estou recebendo uma mensagem de erro de permissão",
+                "Como faço para obter permissões de administrador?",
+                "A instalação do programa requer permissões de administrador",
+                "Não consigo acessar uma configuração que requer permissões",
+                "O que fazer quando pedem login de administrador?"
+            ],
+            "responses": [
+                "Para resolver problemas de instalação ou alterações que requerem permissões de administrador, você deve fazer login com um usuário que tenha privilégios administrativos. Normalmente, esse usuário é chamado de 'interno.simplifica'.",
+                "Se você está recebendo uma mensagem de erro de permissão, tente deslogar do seu usuário atual e fazer login com um usuário administrador. Em seguida, acesse o Painel de Controle e tente realizar a ação novamente.",
+                "Verifique se o usuário com o qual você está logado tem permissões de administrador. Se não, faça login com o usuário apropriado e tente realizar a operação desejada."
+            ]
+        },
+        {
+            "tag": "admin_login_instructions",
+            "patterns": [
+                "Como faço login como administrador?",
+                "Quais são os passos para mudar para um usuário administrador?",
+                "Como acessar o Painel de Controle como administrador?",
+                "O que fazer após fazer login como administrador?",
+                "Quais são as etapas para realizar uma instalação com permissões administrativas?",
+                "administrador",
+                "login de administrador",
+                "login"
+            ],
+            "responses": [
+                "Primeiro, deslogue do usuário atual e faça login com o usuário 'interno.simplifica', que é o administrador. Depois, abra o Painel de Controle e siga os passos para realizar a alteração necessária nos usuários administrativos locais do computador.",
+                "Após fazer login com um usuário administrador, abra o Painel de Controle e acesse as configurações ou programas necessários. Se for uma instalação, inicie o processo de instalação e siga as instruções na tela.",
+                "Certifique-se de estar logado com um usuário que tenha permissões de administrador. Em seguida, acesse o Painel de Controle e verifique se você pode realizar a instalação ou adicionar mais usuários administrativos locais."
+            ]
+        },
+        {
+            "tag": "network_access_issue",
+            "patterns": [
+                "Não consigo acessar a rede",
+                "A rede está bloqueada",
+                "Estou enfrentando problemas de acesso à rede",
+                "Qual é a solução para problemas de acesso a rede?",
+                "A rede não está funcionando corretamente",
+                "Como resolver problemas de acesso à rede?",
+                "Conexão",
+                "um problema com conexão",
+                "e problema com conexão",
+                "problema de conexao"
+            ],
+            "responses": [
+                "Se você está enfrentando problemas de acesso à rede, pode ser necessário inserir um login (PMT) através de um caminho alternativo no navegador para liberar o acesso. Verifique se o Blockbit ou outro firewall não está bloqueando sua conexão.",
+                "Para problemas de rede, especialmente com o Blockbit ativo, tente usar um caminho alternativo no navegador para inserir o login (PMT). Isso pode ajudar a liberar o acesso à rede.",
+                "Certifique-se de que não há configurações de firewall ou bloqueios que estejam impedindo o acesso. Utilize um caminho alternativo para inserir o login (PMT) e resolver o problema de acesso à rede."
+            ]
+        },
+        {
+            "tag": "network_adapter_issue",
+            "patterns": [
+                "O adaptador de rede não está sendo reconhecido",
+                "Não vejo o ícone de conexão de rede",
+                "Problemas com o adaptador de rede",
+                "A rede não é detectada",
+                "O adaptador de rede não aparece",
+                "Como resolver problemas com adaptadores de rede?",
+                "Não consigo me conectar a rede",
+                "O cliente reiniciou o adaptador",
+                "O cliente mexeu no adaptador",
+                "adaptadores",
+                "é um problema com adaptadores",
+                "a rede nao reconhece",
+                "a rede nao aparece"
+            ],
+            "responses": [
+                "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
+                "Caso o adaptador de rede não esteja sendo detectado, acesse o Painel de Controle e vá para Configurações de Rede. Verifique se o adaptador está habilitado e, se necessário, redefina as configurações de rede, inserindo manualmente o IP, DNS e etc na Central de Rede e Compartilhamento.",
+                "Verifique as configurações do adaptador de rede em 'Central de Redes e Compartilhamento' (TCP/IPV4) e certifique-se de que está configurado corretamente."
+            ]
+        },
+        {
+            "tag": "folder_access_issue",
+            "patterns": [
+                "Não consigo acessar uma pasta",
+                "Acesso negado a pasta do servidor",
+                "Estou enfrentando problemas com uma pasta",
+                "Como resolver problemas de acesso a pastas?",
+                "Não consigo explorar uma pasta específica",
+                "Qual é a solução para problemas de pasta no servidor?",
+                "É um problema de pastas",
+                "Estou enfrentando problemas com as pastas",
+                "As pastas estão falhando",
+                "Não consigo explorar uma pasta do servidor",
+                "É um problema com a pasta do servidor",
+                "É um problema de pastas",
+                "Não consigo acessar pasta F",
+                "Não consigo entrar na pasta F"
+            ],
+            "responses": [
+                "Se você está enfrentando problemas de acesso a uma pasta do servidor, vá ao Explorador de Arquivos, clique com o botão direito em 'Este Computador', escolha 'Adicionar local de rede', e adicione o caminho da pasta \\\\SRV-FS-01\\fs$\\PMT.",
+                "Para problemas de acesso a pastas, adicione o local da rede no Explorador de Arquivos. Use o caminho apropriado, por exemplo, \\\\SRV-FS-01\\fs$\\PMT, e certifique-se de que o nome está correto.",
+                "Caso não consiga acessar uma pasta, adicione-a manualmente no Explorador de Arquivos. Insira o caminho da pasta e ajuste o nome conforme necessário para acessar a pasta desejada \\\\SRV-FS-01\\fs$\\PMT."
+            ]
+            },
+                {
+                    "tag": "printer_configuration",
                     "patterns": [
-                        "Estou com problemas para instalar um programa",
-                        "Preciso de permissões de administrador",
-                        "Não consigo adicionar usuários à rede",
-                        "Estou recebendo uma mensagem de erro de permissão",
-                        "Como faço para obter permissões de administrador?",
-                        "A instalação do programa requer permissões de administrador",
-                        "Não consigo acessar uma configuração que requer permissões",
-                        "O que fazer quando pedem login de administrador?"
+                        "Como acessar a configuração da impressora?",
+                        "Qual é o IP da impressora?",
+                        "Como alterar mesas ou usuários na impressora?",
+                        "Onde encontro a página de configuração da impressora?",
+                        "Como imprimir a folha de configuração de rede da impressora?",
+                        "Quais são as senhas padrão das impressoras?"
                     ],
                     "responses": [
-                        "Para resolver problemas de instalação ou alterações que requerem permissões de administrador, você deve fazer login com um usuário que tenha privilégios administrativos. Normalmente, esse usuário é chamado de 'interno.simplifica'.",
-                        "Se você está recebendo uma mensagem de erro de permissão, tente deslogar do seu usuário atual e fazer login com um usuário administrador. Em seguida, acesse o Painel de Controle e tente realizar a ação novamente.",
-                        "Verifique se o usuário com o qual você está logado tem permissões de administrador. Se não, faça login com o usuário apropriado e tente realizar a operação desejada."
+                        "Para acessar a configuração web da impressora, digite o IP da impressora no navegador. Para obter o IP, imprima a folha de configuração de rede da impressora.",
+                        "Acesse a página de configuração da impressora digitando seu IP no navegador. Imprima a folha de configuração para obter o IP da impressora.",
+                        "A página de configuração da impressora pode ser acessada digitando o IP da impressora no navegador. Imprima a folha de configuração de rede para encontrar o IP.",
+                        "Senhas padrão das impressoras: Usuário: admin, Senha: sec00000; Usuário: copyline, Senha: m4070fr; Usuário: admin, Senha: copy.123."
                     ]
                 },
                 {
-                    "tag": "admin_login_instructions",
+                    "tag": "smb_protocol",
                     "patterns": [
-                        "Como faço login como administrador?",
-                        "Quais são os passos para mudar para um usuário administrador?",
-                        "Como acessar o Painel de Controle como administrador?",
-                        "O que fazer após fazer login como administrador?",
-                        "Quais são as etapas para realizar uma instalação com permissões administrativas?",
-                        "administrador",
-                        "login de administrador",
-                        "login"
+                        "O que é o protocolo SMB?",
+                        "Como funciona o protocolo SMB?",
+                        "Para que serve o protocolo SMB?",
+                        "SMB é para compartilhamento de recursos?",
+                        "Qual a função do protocolo SMB?"
                     ],
                     "responses": [
-                        "Primeiro, deslogue do usuário atual e faça login com o usuário 'interno.simplifica', que é o administrador. Depois, abra o Painel de Controle e siga os passos para realizar a alteração necessária nos usuários administrativos locais do computador.",
-                        "Após fazer login com um usuário administrador, abra o Painel de Controle e acesse as configurações ou programas necessários. Se for uma instalação, inicie o processo de instalação e siga as instruções na tela.",
-                        "Certifique-se de estar logado com um usuário que tenha permissões de administrador. Em seguida, acesse o Painel de Controle e verifique se você pode realizar a instalação ou adicionar mais usuários administrativos locais."
+                        "O protocolo SMB (Server Message Block) é um padrão para compartilhamento de recursos em redes, incluindo impressoras e scanners. É utilizado para facilitar a comunicação entre servidores e clientes."
                     ]
                 },
                 {
-                    "tag": "network_access_issue",
+                    "tag": "printer_errors",
+                    "patterns": [
+                        "Como resolver erros em impressoras 4070 ou 4080?",
+                        "O que fazer quando não encontro erros na página de configuração?",
+                        "Como lidar com erros de tray roller?",
+                        "Onde encontrar o Tech Menu da impressora?",
+                        "Qual é o código para acessar o Tech Menu?"
+                    ],
+                    "responses": [
+                        "Para resolver erros em impressoras 4070 ou 4080, use o Tech Menu na impressora. Aperte o menu, depois o # e digite 1934 para acessar o Tech Menu. Caso peça senha, use 1934."
+                    ]
+                },
+                {
+                    "tag": "scanning_issues",
+                    "patterns": [
+                        "A impressora não está digitalizando corretamente",
+                        "Como resolver problemas de digitalização?",
+                        "A digitalização não está indo para a pasta correta",
+                        "O que fazer quando a impressora não envia digitalizações?",
+                        "Como verificar a configuração de IP para digitalização?"
+                    ],
+                    "responses": [
+                        "Se a impressora não está digitalizando corretamente, verifique a configuração da pasta na página web da impressora e o IP configurado para cada usuário. Certifique-se de que o IP está correto e não repetido para evitar problemas de comunicação."
+                    ]
+                },
+                {
+                    "tag": "network_access",
                     "patterns": [
                         "Não consigo acessar a rede",
                         "A rede está bloqueada",
-                        "Estou enfrentando problemas de acesso à rede",
-                        "Qual é a solução para problemas de acesso a rede?",
-                        "A rede não está funcionando corretamente",
                         "Como resolver problemas de acesso à rede?",
-                        "Conexão"
+                        "O que fazer se a rede não estiver funcionando?",
+                        "Como lidar com problemas de conexão de rede?"
                     ],
                     "responses": [
-                        "Se você está enfrentando problemas de acesso à rede, pode ser necessário inserir um login (PMT) através de um caminho alternativo no navegador para liberar o acesso. Verifique se o Blockbit ou outro firewall não está bloqueando sua conexão.",
-                        "Para problemas de rede, especialmente com o Blockbit ativo, tente usar um caminho alternativo no navegador para inserir o login (PMT). Isso pode ajudar a liberar o acesso à rede.",
-                        "Certifique-se de que não há configurações de firewall ou bloqueios que estejam impedindo o acesso. Utilize um caminho alternativo para inserir o login (PMT) e resolver o problema de acesso à rede."
+                        "Para resolver problemas de acesso à rede, tente inserir o login (PMT) através de um caminho alternativo no navegador. Verifique se o Blockbit ou outro firewall não está bloqueando sua conexão."
                     ]
-                },
-                {
-                    "tag": "network_adapter_issue",
-                    "patterns": [
-                        "O adaptador de rede não está sendo reconhecido",
-                        "Não vejo o ícone de conexão de rede",
-                        "Problemas com o adaptador de rede",
-                        "A rede não é detectada",
-                        "O adaptador de rede não aparece",
-                        "Como resolver problemas com adaptadores de rede?",
-                        "Não consigo me conectar a rede",
-                        "O cliente reiniciou o adaptador",
-                        "O cliente mexeu no adaptador"
-                    ],
-                    "responses": [
-                        "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
-                        "Caso o adaptador de rede não esteja sendo detectado, acesse o Painel de Controle e vá para Configurações de Rede. Verifique se o adaptador está habilitado e, se necessário, redefina as configurações de rede, inserindo manualmente o IP, DNS e etc na Central de Rede e Compartilhamento.",
-                        "Verifique as configurações do adaptador de rede em 'Central de Redes e Compartilhamento' (TCP/IPV4) e certifique-se de que está configurado corretamente."
-                    ]
-                },
-                {
-                    "tag": "folder_access_issue",
-                    "patterns": [
-                        "Não consigo acessar uma pasta",
-                        "Acesso negado a pasta do servidor",
-                        "Estou enfrentando problemas com uma pasta",
-                        "Como resolver problemas de acesso a pastas?",
-                        "Não consigo explorar uma pasta específica",
-                        "Qual é a solução para problemas de pasta no servidor?",
-                        "É um problema de pastas",
-                        "Estou enfrentando problemas com as pastas",
-                        "As pastas estão falhando",
-                        "Não consigo explorar uma pasta do servidor",
-                        "É um problema com a pasta do servidor",
-                        "É um problema de pastas",
-                        "Não consigo acessar pasta F",
-                        "Não consigo entrar na pasta F"
-                    ],
-                    "responses": [
-                        "Se você está enfrentando problemas de acesso a uma pasta do servidor, vá ao Explorador de Arquivos, clique com o botão direito em 'Este Computador', escolha 'Adicionar local de rede', e adicione o caminho da pasta \\\\SRV-FS-01\\fs$\\PMT.",
-                        "Para problemas de acesso a pastas, adicione o local da rede no Explorador de Arquivos. Use o caminho apropriado, por exemplo, \\\\SRV-FS-01\\fs$\\PMT, e certifique-se de que o nome está correto.",
-                        "Caso não consiga acessar uma pasta, adicione-a manualmente no Explorador de Arquivos. Insira o caminho da pasta e ajuste o nome conforme necessário para acessar a pasta desejada \\\\SRV-FS-01\\fs$\\PMT."
-                ]
-            }
-        ]
-    }
+                }
+            ]
+        }
