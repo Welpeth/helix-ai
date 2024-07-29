@@ -13,11 +13,13 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
     ```bash
     git clone https://github.com/Welpeth/helix-ai
     ```
-    
-3. **Instale as Dependências**: Navegue para o diretório do projeto em Flask_Application e instale as dependências necessárias com:
+
+3. **Instale as Dependências**: Navegue para o diretório do projeto e instale as dependências necessárias com os seguintes comando:
 
     ```bash
     pip install -r requirements.txt
+    pip install scikit-learn gensim keras tensorflow spacy flask unidecode nltk
+    python -m spacy download pt_core_news_lg
     ```
 
 4. **Execute o Aplicativo**: Com as dependências instaladas, você pode iniciar o Helix AI executando:

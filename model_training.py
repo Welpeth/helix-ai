@@ -3,25 +3,24 @@ import json
 import pickle
 import numpy as np
 import nltk
+nltk.download('rslp')
+nltk.download('punkt')
 import sklearn
-from tensorflow import keras
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout, Embedding, LSTM
+from tensorflow.keras.layers import Dense, Dropout
 from sklearn.model_selection import train_test_split
 from nltk.stem import RSLPStemmer
 from nltk.tokenize import word_tokenize
-from gensim.models import FastText
 
-# Inicializar o stemmer
+# Initialize the stemmer
 stemmer = RSLPStemmer()
 
-# Carregar intents
+# Load intents
 with open('model/intents.json', 'r', encoding='utf-8') as file:
     intents = json.load(file)
 
-# Função para normalizar gírias e sinônimos
+# Function to normalize slang and synonyms
 def normalize_text(text):
-    # Defina um dicionário mais completo conforme necessário
     slang_dict = {
         'config': 'configurações',
         'net': 'internet',
@@ -64,7 +63,7 @@ def normalize_text(text):
     normalized_words = [slang_dict.get(word, word) for word in words]
     return ' '.join(normalized_words)
 
-# Processar intents
+# Process intents
 words = []
 classes = []
 documents = []
@@ -73,8 +72,7 @@ ignore_letters = ['?', '!', '.', ',']
 def load_keywords():
     with open('model/keywords.json', 'r', encoding='utf-8') as file:
         data = json.load(file)
-    keywords = {entry['keyword']: entry['responses'] for entry in data['keywords']}
-    return keywords
+    return [{'keywords': entry['keywords'], 'responses': entry['responses']} for entry in data['keywords']]
 
 for intent in intents['intents']:
     for pattern in intent['patterns']:
@@ -85,23 +83,23 @@ for intent in intents['intents']:
         documents.append((word_list, intent['tag']))
 
         for keyword in keywords:
-            if keyword not in word_list:
-                word_list.append(keyword)
+            for key in keyword['keywords']:
+                if key not in word_list:
+                    word_list.append(key)
 
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 
-# Aplicar stemming
+# Apply stemming
 words = [stemmer.stem(word.lower()) for word in words if word not in ignore_letters]
 words = sorted(set(words))
-
 classes = sorted(set(classes))
 
-# Salvar palavras e classes
+# Save words and classes
 pickle.dump(words, open('model/words.pkl', 'wb'))
 pickle.dump(classes, open('model/classes.pkl', 'wb'))
 
-# Preparar dados para treinamento
+# Prepare data for training
 training = []
 output_empty = [0] * len(classes)
 
@@ -122,10 +120,10 @@ random.shuffle(training)
 train_x = np.array([t[0] for t in training])
 train_y = np.array([t[1] for t in training])
 
-# Dividir dados em treinamento e validação
+# Split data into training and validation sets
 X_train, X_val, y_train, y_val = train_test_split(train_x, train_y, test_size=0.2, random_state=42)
 
-# Construir e treinar o modelo
+# Build and train the model
 model = Sequential()
 model.add(Dense(1024, input_shape=(len(train_x[0]),), activation='relu'))
 model.add(Dropout(0.5))
@@ -142,5 +140,5 @@ model.add(Dense(len(train_y[0]), activation='softmax'))
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
 model.fit(X_train, y_train, epochs=1200, batch_size=5, validation_data=(X_val, y_val), verbose=1)
 
-# Salvar o modelo treinado
+# Save the trained model
 model.save('model/chatbot_model.keras')
