@@ -3,13 +3,14 @@ import json
 import pickle
 import numpy as np
 import nltk
-from nltk.stem import RSLPStemmer
-from nltk.tokenize import word_tokenize
+import sklearn
+from tensorflow import keras
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense, Dropout, Embedding, LSTM
-from tensorflow.keras.optimizers import Adam
+from sklearn.model_selection import train_test_split
+from nltk.stem import RSLPStemmer
+from nltk.tokenize import word_tokenize
 from gensim.models import FastText
-from nltk.corpus import wordnet as wn
 
 # Inicializar o stemmer
 stemmer = RSLPStemmer()
@@ -20,43 +21,44 @@ with open('model/intents.json', 'r', encoding='utf-8') as file:
 
 # Função para normalizar gírias e sinônimos
 def normalize_text(text):
+    # Defina um dicionário mais completo conforme necessário
     slang_dict = {
-    'config' : 'configurações',
-    'net': 'internet',
-    'adpt': 'adaptador',
-    'pst': 'pasta',
-    'vc': 'você',
-    'tb': 'também',
-    'pq': 'porque',
-    'bff': 'melhor amigo para sempre',
-    'q': 'que',
-    'dps': 'depois',
-    'blz': 'beleza',
-    'tmj': 'tamo junto',
-    'p': 'para',
-    'td': 'tudo',
-    'qdo': 'quando',
-    'nd': 'nada',
-    'lol': 'rir alto', 
-    'tbm': 'também',
-    'hj': 'hoje',
-    'am': 'amigo',
-    'tô': 'estou',
-    'msg': 'mensagem',
-    'n': 'não',
-    'sim': 'sim',
-    'vlw': 'valeu',
-    'grd': 'grande',
-    'wpp': 'whatsapp',
-    'pode crer': 'pode acreditar',
-    'bjs': 'beijos',
-    'abs': 'abraços',
-    'emo': 'emocional',
-    'kkk': 'risada',
-    'aff': 'aflito/irritado',
-    'lkk': 'risada',  
-    'flw': 'falou',
-    'vlw': 'valeu'
+        'config': 'configurações',
+        'net': 'internet',
+        'adpt': 'adaptador',
+        'pst': 'pasta',
+        'vc': 'você',
+        'tb': 'também',
+        'pq': 'porque',
+        'bff': 'melhor amigo para sempre',
+        'q': 'que',
+        'dps': 'depois',
+        'blz': 'beleza',
+        'tmj': 'tamo junto',
+        'p': 'para',
+        'td': 'tudo',
+        'qdo': 'quando',
+        'nd': 'nada',
+        'lol': 'rir alto',
+        'tbm': 'também',
+        'hj': 'hoje',
+        'am': 'amigo',
+        'tô': 'estou',
+        'msg': 'mensagem',
+        'n': 'não',
+        'sim': 'sim',
+        'vlw': 'valeu',
+        'grd': 'grande',
+        'wpp': 'whatsapp',
+        'pode crer': 'pode acreditar',
+        'bjs': 'beijos',
+        'abs': 'abraços',
+        'emo': 'emocional',
+        'kkk': 'risada',
+        'aff': 'aflito/irritado',
+        'lkk': 'risada',
+        'flw': 'falou',
+        'vlw': 'valeu'
     }
     words = text.split()
     normalized_words = [slang_dict.get(word, word) for word in words]
@@ -108,22 +110,25 @@ random.shuffle(training)
 train_x = np.array([t[0] for t in training])
 train_y = np.array([t[1] for t in training])
 
+# Dividir dados em treinamento e validação
+X_train, X_val, y_train, y_val = train_test_split(train_x, train_y, test_size=0.2, random_state=42)
+
 # Construir e treinar o modelo
 model = Sequential()
-model.add(Dense(1024, input_shape=(len(train_x[0]),), activation='relu'))  # Aumentado para 1024 neurônios
+model.add(Dense(1024, input_shape=(len(train_x[0]),), activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(512, activation='relu'))  # Aumentado para 512 neurônios
+model.add(Dense(512, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(256, activation='relu'))  # Aumentado para 256 neurônios
+model.add(Dense(256, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(128, activation='relu'))  # Aumentado para 128 neurônios
+model.add(Dense(128, activation='relu'))
 model.add(Dropout(0.5))
-model.add(Dense(64, activation='relu'))   # Adicionada nova camada com 64 neurônios
+model.add(Dense(64, activation='relu'))
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
 model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-model.fit(train_x, train_y, epochs=1200, batch_size=5, verbose=1)
+model.fit(X_train, y_train, epochs=1200, batch_size=5, validation_data=(X_val, y_val), verbose=1)
 
 # Salvar o modelo treinado
 model.save('model/chatbot_model.keras')

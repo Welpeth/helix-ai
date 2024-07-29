@@ -207,6 +207,7 @@
             "patterns": [
                 "O adaptador de rede não está sendo reconhecido",
                 "Não vejo o ícone de conexão de rede",
+                "preciso de ajuda com adaptadores",
                 "Problemas com o adaptador de rede",
                 "A rede não é detectada",
                 "O adaptador de rede não aparece",
@@ -218,7 +219,9 @@
                 "é um problema com adaptadores",
                 "a rede nao reconhece",
                 "a rede nao aparece",
-                "é um problema de adaptador de rede"
+                "é um problema de adaptador de rede",
+                "quero saber sobre adaptadores",
+                "adaptadores de rede"
             ],
             "responses": [
                 "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
@@ -236,13 +239,16 @@
                     "Não consigo explorar uma pasta específica",
                     "Qual é a solução para problemas de pasta no servidor?",
                     "É um problema de pastas",
+                    "pasta",
+                    "pasta f",
                     "Estou enfrentando problemas com as pastas",
                     "As pastas estão falhando",
                     "Não consigo explorar uma pasta do servidor",
                     "É um problema com a pasta do servidor",
                     "É um problema de pastas",
                     "Não consigo acessar pasta F",
-                    "Não consigo entrar na pasta F"
+                    "Não consigo entrar na pasta F",
+                    "acesso a pasta f"
                 ],
                 "responses": [
                     "Se você está enfrentando problemas de acesso a uma pasta do servidor, vá ao Explorador de Arquivos, clique com o botão direito em 'Este Computador', escolha 'Adicionar local de rede', e adicione o caminho da pasta \\\\SRV-FS-01\\fs$\\PMT.",
@@ -283,10 +289,12 @@
                     "tag": "smb_protocol",
                     "patterns": [
                         "O que é o protocolo SMB?",
+                        "protocolo smb",
                         "Como funciona o protocolo SMB?",
                         "Para que serve o protocolo SMB?",
                         "SMB é para compartilhamento de recursos?",
-                        "Qual a função do protocolo SMB?"
+                        "Qual a função do protocolo SMB?",
+                        "pra que serve o smb"
                     ],
                     "responses": [
                         "O protocolo SMB (Server Message Block) é um padrão para compartilhamento de recursos em redes, incluindo impressoras e scanners. É utilizado para facilitar a comunicação entre servidores e clientes."

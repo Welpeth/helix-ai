@@ -8,9 +8,10 @@ from nltk.stem import RSLPStemmer
 from tensorflow.keras.models import load_model
 import random
 from unidecode import unidecode
+import os
 
 # Carregar o modelo spaCy e o modelo Keras
-nlp = spacy.load('pt_core_news_sm')
+nlp = spacy.load('pt_core_news_lg')  # Atualizado para o modelo grande
 model = load_model('model/chatbot_model.keras')
 words = pickle.load(open('model/words.pkl', 'rb'))
 classes = pickle.load(open('model/classes.pkl', 'rb'))
@@ -19,7 +20,6 @@ ignore_letters = ['?', '!', '.', ',']
 stemmer = RSLPStemmer()
 
 def clean_up_sentence(sentence):
-    # Limpar a frase e tokenizar
     sentence = unidecode(sentence)  # Remove acentos
     sentence = sentence.lower()  # Converte para minúsculas
     sentence_words = word_tokenize(sentence, language='portuguese')
@@ -51,7 +51,6 @@ def predict_class(sentence):
 def get_response(message):
     intents_json = json.load(open('model/intents.json', 'r', encoding='utf-8'))
     
-    # Verificar se a entrada é uma string
     if not isinstance(message, str):
         raise ValueError("A entrada deve ser uma string.")
     
@@ -68,8 +67,8 @@ def get_response(message):
                 highest_similarity = similarity
                 best_tag = intent['tag']
     
-    # Adicionar um limite mínimo de similaridade para considerar uma correspondência
-    MIN_SIMILARITY_THRESHOLD = 0.6
+
+    MIN_SIMILARITY_THRESHOLD = 0.8
     if highest_similarity < MIN_SIMILARITY_THRESHOLD:
         return "Desculpe, não consegui encontrar uma resposta para sua pergunta."
     
