@@ -23,16 +23,31 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
 
     ```bash
     cd Flask_Application
-    
+
     pip install -r requirements.txt
     pip install scikit-learn gensim keras tensorflow spacy flask unidecode nltk
     python -m spacy download pt_core_news_lg
     ```
 
-4. **Execute o Aplicativo**: Com as dependências instaladas, você pode iniciar o Helix AI executando:
+4. **Execute o Treinamento**: Com as dependências instaladas, você pode iniciar o Helix AI, voltando para a pasta principal e executando:
 
     ```bash
+    cd ..
+
+    python model_training.py
+    ```
+5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, volte para a pasta Flask_Application execute:
+
+    ```bash
+    cd Flask_Application
+
     python app.py
+    ```
+    
+6. **Abra no navegador**: Com tudo pronto e o app.py funcionando perfeitamente abra no localhost:
+
+    ```
+    127.0.0.1:5000
     ```
 
 Agora você pode usar o Helix AI para detectar padrões e responder perguntas.
