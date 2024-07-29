@@ -13,17 +13,16 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
     ```bash
     git clone https://github.com/Welpeth/helix-ai
     ```
+
 2. **Navegue até o Repositório Clonado**: No terminal do bash de cd no helix-ai:
 
     ```bash
     cd helix-ai
     ```
 
-3. **Instale as Dependências**: Navegue para o diretório do projeto e instale as dependências necessárias com os seguintes comandos:
+3. **Instale as Dependências**: Instale as dependências necessárias com os seguintes comandos:
 
     ```bash
-    cd Flask_Application
-
     pip install -r requirements.txt
     pip install scikit-learn gensim keras tensorflow spacy flask unidecode nltk
     python -m spacy download pt_core_news_lg
@@ -33,17 +32,15 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
 
     ```bash
     cd ..
-
     python model_training.py
     ```
 5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, volte para a pasta Flask_Application execute:
 
     ```bash
     cd Flask_Application
-
     python app.py
     ```
-    
+
 6. **Abra no navegador**: Com tudo pronto e o app.py funcionando perfeitamente abra no localhost:
 
     ```
