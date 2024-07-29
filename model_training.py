@@ -6,8 +6,10 @@ import nltk
 from nltk.stem import RSLPStemmer
 from nltk.tokenize import word_tokenize
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense, Dropout
-from tensorflow.keras.optimizers import SGD
+from tensorflow.keras.layers import Dense, Dropout, Embedding, LSTM
+from tensorflow.keras.optimizers import Adam
+from gensim.models import FastText
+from nltk.corpus import wordnet as wn
 
 # Inicializar o stemmer
 stemmer = RSLPStemmer()
@@ -16,15 +18,60 @@ stemmer = RSLPStemmer()
 with open('model/intents.json', 'r', encoding='utf-8') as file:
     intents = json.load(file)
 
+# Função para normalizar gírias e sinônimos
+def normalize_text(text):
+    slang_dict = {
+    'config' : 'configurações',
+    'net': 'internet',
+    'adpt': 'adaptador',
+    'pst': 'pasta',
+    'vc': 'você',
+    'tb': 'também',
+    'pq': 'porque',
+    'bff': 'melhor amigo para sempre',
+    'q': 'que',
+    'dps': 'depois',
+    'blz': 'beleza',
+    'tmj': 'tamo junto',
+    'p': 'para',
+    'td': 'tudo',
+    'qdo': 'quando',
+    'nd': 'nada',
+    'lol': 'rir alto', 
+    'tbm': 'também',
+    'hj': 'hoje',
+    'am': 'amigo',
+    'tô': 'estou',
+    'msg': 'mensagem',
+    'n': 'não',
+    'sim': 'sim',
+    'vlw': 'valeu',
+    'grd': 'grande',
+    'wpp': 'whatsapp',
+    'pode crer': 'pode acreditar',
+    'bjs': 'beijos',
+    'abs': 'abraços',
+    'emo': 'emocional',
+    'kkk': 'risada',
+    'aff': 'aflito/irritado',
+    'lkk': 'risada',  
+    'flw': 'falou',
+    'vlw': 'valeu'
+    }
+    words = text.split()
+    normalized_words = [slang_dict.get(word, word) for word in words]
+    return ' '.join(normalized_words)
+
+# Processar intents
 words = []
 classes = []
 documents = []
 ignore_letters = ['?', '!', '.', ',']
 
-# Processar intents
 for intent in intents['intents']:
     for pattern in intent['patterns']:
-        word_list = word_tokenize(pattern, language='portuguese')
+        normalized_pattern = normalize_text(pattern)
+        word_list = word_tokenize(normalized_pattern, language='portuguese')
         words.extend(word_list)
         documents.append((word_list, intent['tag']))
         if intent['tag'] not in classes:
@@ -75,11 +122,8 @@ model.add(Dense(64, activation='relu'))   # Adicionada nova camada com 64 neurô
 model.add(Dropout(0.5))
 model.add(Dense(len(train_y[0]), activation='softmax'))
 
-# Atualizar para usar o novo formato do SGD
-sgd = SGD(learning_rate=0.01, momentum=0.9, nesterov=True)
-model.compile(loss='categorical_crossentropy', optimizer=sgd, metrics=['accuracy'])
-
-model.fit(np.array(train_x), np.array(train_y), epochs=1200, batch_size=5, verbose=1)
+model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+model.fit(train_x, train_y, epochs=1200, batch_size=5, verbose=1)
 
 # Salvar o modelo treinado
 model.save('model/chatbot_model.keras')

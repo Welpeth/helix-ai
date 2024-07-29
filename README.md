@@ -11,11 +11,9 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
 2. **Clone o Repositório**: No terminal do bash, navegue até o diretório onde deseja clonar o repositório e execute:
 
     ```bash
-    git clone <URL-do-repositório>
+    git clone https://github.com/Welpeth/helix-ai
     ```
-
-    Substitua `<URL-do-repositório>` pelo URL do repositório que você quer clonar no GitHub.
-
+    
 3. **Instale as Dependências**: Navegue para o diretório do projeto em Flask_Application e instale as dependências necessárias com:
 
     ```bash
