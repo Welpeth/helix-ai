@@ -70,12 +70,24 @@ classes = []
 documents = []
 ignore_letters = ['?', '!', '.', ',']
 
+def load_keywords():
+    with open('model/keywords.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    keywords = {entry['keyword']: entry['responses'] for entry in data['keywords']}
+    return keywords
+
 for intent in intents['intents']:
     for pattern in intent['patterns']:
         normalized_pattern = normalize_text(pattern)
         word_list = word_tokenize(normalized_pattern, language='portuguese')
         words.extend(word_list)
+        keywords = load_keywords()
         documents.append((word_list, intent['tag']))
+
+        for keyword in keywords:
+            if keyword not in word_list:
+                word_list.append(keyword)
+
         if intent['tag'] not in classes:
             classes.append(intent['tag'])
 

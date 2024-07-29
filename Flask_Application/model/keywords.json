@@ -1,0 +1,38 @@
+{
+    "keywords": [
+        {
+            "keywords" : ["adaptador"],
+            "responses" : [
+                    "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
+                    "Caso o adaptador de rede não esteja sendo detectado, acesse o Painel de Controle e vá para Configurações de Rede. Verifique se o adaptador está habilitado e, se necessário, redefina as configurações de rede, inserindo manualmente o IP, DNS e etc na Central de Rede e Compartilhamento.",
+                    "Verifique as configurações do adaptador de rede em 'Central de Redes e Compartilhamento' (TCP/IPV4) e certifique-se de que está configurado corretamente."
+            ]
+        },
+        {
+            "keywords": ["pasta"],
+            "responses" : [
+                    "Se você está enfrentando problemas de acesso a uma pasta do servidor, vá ao Explorador de Arquivos, clique com o botão direito em 'Este Computador', escolha 'Adicionar local de rede', e adicione o caminho da pasta \\\\SRV-FS-01\\fs$\\PMT.",
+                    "Para problemas de acesso a pastas, adicione o local da rede no Explorador de Arquivos. Use o caminho apropriado, por exemplo, \\\\SRV-FS-01\\fs$\\PMT, e certifique-se de que o nome está correto.",
+                    "Caso não consiga acessar uma pasta, adicione-a manualmente no Explorador de Arquivos. Insira o caminho da pasta e ajuste o nome conforme necessário para acessar a pasta desejada \\\\SRV-FS-01\\fs$\\PMT."
+            ]
+        },
+        {
+            "keywords" : ["smb"],
+            "responses" : [
+                "O protocolo SMB (Server Message Block) é um padrão para compartilhamento de recursos em redes, incluindo impressoras e scanners. É utilizado para facilitar a comunicação entre servidores e clientes."
+            ]
+        },
+        {
+            "keywords" : ["digilitalizar"],
+            "responses" : [
+                "Se a impressora não está digitalizando corretamente, verifique a configuração da pasta na página web da impressora e o IP configurado para cada usuário. Certifique-se de que o IP está correto e não repetido para evitar problemas de comunicação. Além disso verifique se o SMB 1.0 está habilitado nos recursos do windows"
+            ]
+        },
+        {
+            "keywords" : ["wifi da TV"],
+            "responses" : [
+                "Pegue o controle da TV, aperte no botão de configurações, vá em Definições, procure algo relacionado a Wifi, conecte-se a Simplifica Visitantes ou TVs recepção."
+            ]
+        }
+    ]
+}

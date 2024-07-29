@@ -11,7 +11,7 @@ from unidecode import unidecode
 import os
 
 # Carregar o modelo spaCy e o modelo Keras
-nlp = spacy.load('pt_core_news_lg')  # Atualizado para o modelo grande
+nlp = spacy.load('pt_core_news_lg')
 model = load_model('model/chatbot_model.keras')
 words = pickle.load(open('model/words.pkl', 'rb'))
 classes = pickle.load(open('model/classes.pkl', 'rb'))
@@ -20,8 +20,8 @@ ignore_letters = ['?', '!', '.', ',']
 stemmer = RSLPStemmer()
 
 def clean_up_sentence(sentence):
-    sentence = unidecode(sentence)  # Remove acentos
-    sentence = sentence.lower()  # Converte para minúsculas
+    sentence = unidecode(sentence)
+    sentence = sentence.lower()
     sentence_words = word_tokenize(sentence, language='portuguese')
     sentence_words = [stemmer.stem(word) for word in sentence_words if word not in ignore_letters]
     return sentence_words
@@ -48,8 +48,29 @@ def predict_class(sentence):
     return_list = [{'intent': classes[r[0]], 'probability': str(r[1])} for r in results]
     return return_list
 
+intents_json = json.load(open('model/intents.json', 'r', encoding='utf-8'))
+
+def load_keywords():
+    with open('model/keywords.json', 'r', encoding='utf-8') as file:
+        data = json.load(file)
+    # Retorna uma lista de dicionários onde cada dicionário contém um conjunto de palavras-chave e respostas
+    keywords = [{'keywords': entry['keywords'], 'responses': entry['responses']} for entry in data['keywords']]
+    return keywords
+
+def check_keywords(text):
+    keywords = load_keywords()
+    text = text.lower()
+    for entry in keywords:
+        if any(keyword in text for keyword in entry['keywords']):
+            return random.choice(entry['responses'])  # Escolhe uma resposta aleatória da lista de respostas
+    return None
+
+
 def get_response(message):
-    intents_json = json.load(open('model/intents.json', 'r', encoding='utf-8'))
+    # Verificar palavras-chave
+    keyword_response = check_keywords(message)
+    if keyword_response:
+        return keyword_response
     
     if not isinstance(message, str):
         raise ValueError("A entrada deve ser uma string.")
@@ -67,8 +88,7 @@ def get_response(message):
                 highest_similarity = similarity
                 best_tag = intent['tag']
     
-
-    MIN_SIMILARITY_THRESHOLD = 0.8
+    MIN_SIMILARITY_THRESHOLD = 0.5
     if highest_similarity < MIN_SIMILARITY_THRESHOLD:
         return "Desculpe, não consegui encontrar uma resposta para sua pergunta."
     

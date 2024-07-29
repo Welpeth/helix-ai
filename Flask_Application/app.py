@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, render_template
+from flask import Flask, request, jsonify, render_template, json
 import os
 
 from utils import get_response, predict_class
@@ -29,16 +29,24 @@ def handle_message():
     return jsonify({'response': response})
 
 @app.route('/update_intents', methods=['POST'])
-def update_intents():
-    data = request.json
-    if 'tag' not in data or 'patterns' not in data:
-        return jsonify({"error": "As chaves 'tag' e 'patterns' são obrigatórias."}), 400
+def update_intents_file(file_path, tag, new_patterns):
+    with open(file_path, 'r+', encoding='utf-8') as file:
+        data = json.load(file)
+        # Encontrar o intent com o tag especificado ou criar um novo
+        intent_found = False
+        for intent in data['intents']:
+            if intent['tag'] == tag:
+                intent['patterns'] = new_patterns
+                intent_found = True
+                break
+        if not intent_found:
+            data['intents'].append({'tag': tag, 'patterns': new_patterns, 'responses': []})
+        # Voltar para o início do arquivo e sobrescrever com os novos dados
+        file.seek(0)
+        json.dump(data, file, indent=4, ensure_ascii=False)
+        file.truncate()
+    return 'Intents atualizados com sucesso.'
 
-    tag = data['tag']
-    new_patterns = data['patterns']
-    result = update_intents_file('model/intents.json', tag, new_patterns)
-
-    return jsonify({'message': result})
 
 @app.route('/chat', methods=['POST'])
 def chat():

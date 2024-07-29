@@ -57,7 +57,8 @@
                     "Como você se sente",
                     "Como vc se sente",
                     "Como você esta?",
-                    "Como foi seu dia?"
+                    "Como foi seu dia?",
+                    "como  vc esta"
                 ],
                 "responses": [
                     "Estou bem, obrigado por perguntar!",
@@ -185,6 +186,7 @@
                 "tag": "network_access_issue",
                 "patterns": [
                     "Não consigo acessar a rede",
+                    "problema com a rede cabeada",
                     "A rede está bloqueada",
                     "Estou enfrentando problemas de acesso à rede",
                     "Qual é a solução para problemas de acesso a rede?",
@@ -305,7 +307,7 @@
                     "patterns": [
                         "Como resolver erros em impressoras 4070 ou 4080?",
                         "O que fazer quando não encontro erros na página de configuração?",
-                        "Como lidar com erros de tray roller?",
+                        "Como lidar com erros de tray roller?", 
                         "Onde encontrar o Tech Menu da impressora?",
                         "Qual é o código para acessar o Tech Menu?"
                     ],
