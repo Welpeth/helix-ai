@@ -28,7 +28,7 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
     python -m spacy download pt_core_news_lg
     ```
 
-4. **Execute o Treinamento**: Com as dependências instaladas, você pode iniciar o Helix AI, voltando para a pasta principal e executando:
+4. **Execute o Treinamento**: Com as dependências instaladas, você pode iniciar o Helix AI executando:
 
     ```bash
     python model_training.py
