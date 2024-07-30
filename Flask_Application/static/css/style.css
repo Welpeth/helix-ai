@@ -107,6 +107,23 @@ body {
     border-radius: 5px;
 }
 
+.message-content {
+    position: relative;
+    display: inline-block;
+}
+
+.message-content::after {
+    position: absolute;
+    right: 0;
+    animation: blink 1ms step-end infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
 .message {
     margin-bottom: 10px;
     padding: 10px;
