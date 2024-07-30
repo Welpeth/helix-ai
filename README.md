@@ -24,7 +24,11 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
 
     ```bash
     pip install -r requirements.txt
+    ```
+    ```bash
     pip install scikit-learn gensim keras tensorflow spacy flask unidecode nltk
+    ```
+    ```bash
     python -m spacy download pt_core_news_lg
     ```
 
