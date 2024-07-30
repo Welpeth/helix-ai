@@ -28,12 +28,13 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
     python -m spacy download pt_core_news_lg
     ```
 
-4. **Execute o Treinamento**: Com as dependências instaladas, você pode iniciar o Helix AI executando:
+4. **Execute o Treinamento**: Com as dependências instaladas, você pode **abrir o terminal do powershell** vai até o diretorio onde a pasta principal do Helix AI está, e execute:
 
     ```bash
+    cd /home/directory - **Navegar até o diretório**
     python model_training.py
     ```
-5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, vá para a pasta Flask_Application execute:
+5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, vá para a pasta Flask_Application pelo powershell e execute:
 
     ```bash
     cd Flask_Application
