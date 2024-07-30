@@ -37,7 +37,6 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
 5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, vá para a pasta Flask_Application pelo powershell e execute:
 
     ```bash
-    cd Flask_Application
     python app.py
     ```
 
