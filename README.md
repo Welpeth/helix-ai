@@ -14,7 +14,7 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
     git clone https://github.com/Welpeth/helix-ai
     ```
 
-2. **Navegue até o Repositório Clonado**: No terminal do bash de cd no helix-ai:
+2. **Navegue até o Repositório Clonado**: No terminal do powershell de cd no helix-ai:
 
     ```bash
     cd helix-ai
@@ -33,7 +33,7 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
     ```bash
     python model_training.py
     ```
-    
+
 5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, vá para a pasta Flask_Application pelo powershell e execute:
 
     ```bash
