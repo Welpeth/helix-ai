@@ -31,10 +31,9 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
 4. **Execute o Treinamento**: Com as dependências instaladas, você pode iniciar o Helix AI, voltando para a pasta principal e executando:
 
     ```bash
-    cd ..
     python model_training.py
     ```
-5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, volte para a pasta Flask_Application execute:
+5. **Execute o Aplicativo**: Com as dependências instaladas, e o Helix AI pronto, vá para a pasta Flask_Application execute:
 
     ```bash
     cd Flask_Application
