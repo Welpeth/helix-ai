@@ -1,13 +1,12 @@
 $(document).ready(function() {
-    // Verifica se o modo escuro está salvo no localStorage
     if (localStorage.getItem('dark-mode') === 'enabled') {
         $('body').addClass('dark-mode');
         $('#toggle-dark-mode').prop('checked', true);
     }
 
+    // Alterna o modo escuro
     $('#toggle-dark-mode').change(function() {
         $('body').toggleClass('dark-mode');
-        // Salva a preferência do usuário no localStorage
         if ($('body').hasClass('dark-mode')) {
             localStorage.setItem('dark-mode', 'enabled');
         } else {
@@ -15,42 +14,117 @@ $(document).ready(function() {
         }
     });
 
-    $('#send-button').click(function () {
+    
+
+    // Envia a mensagem ao clicar no botão
+    $('#send-button').click(function() {
         sendMessage();
     });
 
+    // Envia a mensagem ao pressionar Enter
     $('#user-input').keypress(function(e) {
-        if (e.which == 13) {
+        if (e.which === 13) { 
+            e.preventDefault(); 
             sendMessage();
         }
     });
 
+    // Função para enviar a mensagem
     function sendMessage() {
         var message = $('#user-input').val().trim();
-        if (message != '') {
+        if (message !== '') {
             // Adiciona a mensagem do usuário ao chat
-            $('#chat-messages').append('<div class="message user"><div class="message-content">' + escapeHtml(message) + '</div></div>');
+            const userMessageDiv = createMessage(message, false, false); 
+            $('#chat-messages').append(userMessageDiv);
             $('#user-input').val('');
+
+            // Faz o scroll para o final do chat
+            $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
 
             // Envia a mensagem para o backend
             $.ajax({
                 url: '/handle_message',
                 type: 'POST',
                 contentType: 'application/json',
-                data: JSON.stringify({message: message}),
-                success: function (data) {
-                    // Adiciona uma mensagem de carregamento enquanto anima a resposta
-                    const botMessage = $('<div class="message bot"><img src="/static/images/helix-pic.png" alt="Bot"><div class="message-content"></div></div>');
-                    $('#chat-messages').append(botMessage);
+                data: JSON.stringify({ message: message }),
+                success: function(data) {
+
+                    const botMessageDiv = createMessage('', true, true); 
+                    $('#chat-messages').append(botMessageDiv);
                     $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
-                    
-                    // Anima a resposta do bot
-                    typeEffect(botMessage.find('.message-content')[0], data.response, 50);
+
+                    updateMessageContent(botMessageDiv, data.response);
+                    typeMessage(botMessageDiv);
+                },
+                error: function(xhr, status, error) {
+                    console.error('Erro ao enviar a mensagem:', error);
                 }
             });
         }
     }
 
+    function createMessage(content, isBot = true, typing = false) {
+        const messageDiv = $('<div class="message"></div>');
+        if (isBot) {
+            messageDiv.addClass('bot');
+            const img = $('<img>').attr({
+                src: '/static/images/helix-pic.png',
+                alt: 'Bot',
+                width: '40',
+                height: '40'
+            });
+            messageDiv.append(img);
+        } else {
+            messageDiv.addClass('user');
+        }
+
+        // Cria o conteúdo da mensagem
+        const messageContentDiv = $('<div class="message-content"></div>').text(content);
+        messageDiv.append(messageContentDiv);
+
+        if (isBot && typing) {
+            const typingIndicatorDiv = $('<div class="typing-indicator"></div>');
+            typingIndicatorDiv.css('display', 'flex'); 
+            for (let i = 0; i < 3; i++) {
+                const dotDiv = $('<div class="dot"></div>');
+                typingIndicatorDiv.append(dotDiv);
+            }
+            messageDiv.append(typingIndicatorDiv);
+        }
+
+        return messageDiv;
+    }
+
+   
+    function updateMessageContent(messageDiv, content) {
+        $(messageDiv).find('.message-content').text(content);
+    }
+
+   
+    function typeMessage(messageDiv) {
+        const messageContentDiv = $(messageDiv).find('.message-content');
+        const typingIndicatorDiv = $(messageDiv).find('.typing-indicator');
+        const text = $(messageContentDiv).text(); // Usa o texto já definido
+        let i = 0;
+
+        $(messageContentDiv).text(''); 
+
+        function type() {
+            if (i < text.length) {
+                $(messageContentDiv).text($(messageContentDiv).text() + text.charAt(i));
+                i++;
+                setTimeout(type, 50); // Velocidade de digitação
+            } else {
+                if ($(messageDiv).hasClass('bot')) {
+                    $(typingIndicatorDiv).css('display', 'none'); 
+                }
+            }
+        }
+
+        type();
+    }
+
+   
     function escapeHtml(text) {
         return text
             .replace(/&/g, '&amp;')
@@ -58,20 +132,6 @@ $(document).ready(function() {
             .replace(/>/g, '&gt;')
             .replace(/"/g, '&quot;')
             .replace(/'/g, '&#039;')
-            .replace(/\n/g, '<br>'); // Adiciona essa linha para converter quebras de linha
+            .replace(/\n/g, '<br>'); 
     }
 });
-
-// Função para animar a escrita do texto
-function typeEffect(element, text, speed) {
-    let i = 0;
-    element.innerHTML = ''; // Limpa o conteúdo anterior
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
-        }
-    }
-    type();
-}

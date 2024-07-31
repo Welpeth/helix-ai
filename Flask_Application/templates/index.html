@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
 </head>
 <body>
 <div id="menu">
@@ -45,14 +46,21 @@
     <div id="chat-content">
         <div id="chat-messages">
             <div class="message bot">
-                <img src="/static/images/helix-pic.png" alt="Bot">
-                <div class="message-content">Olá! Eu sou o Helix, seu assistente virtual.</div>
+                <img src="/static/images/helix-pic.png" alt="Bot" width="40" height="40">
+                <div class="message-content" id="message-content">
+                    Olá eu sou Helix, seu assistente virtual
+                </div>
+                <div class="typing-indicator" id="typing-indicator">
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                    <div class="dot"></div>
+                </div>
             </div>
         </div>
-        <div id="chat-input">
-            <input type="text" id="user-input" placeholder="Digite sua mensagem aqui...">
-            <button id="send-button">Enviar</button>
-        </div>
+    </div>
+    <div id="chat-input">
+        <input type="text" id="user-input" placeholder="Digite sua mensagem aqui...">
+        <button id="send-button">Enviar</button>
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>

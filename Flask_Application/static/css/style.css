@@ -20,15 +20,6 @@ body {
     transition: background-color 0.3s, color 0.3s;
 }
 
-#menu h2 {
-    margin-top: 0;
-    color: white;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
 #menu ul {
     margin-top: 250px;
     list-style: none;
@@ -54,7 +45,7 @@ body {
 }
 
 #chat-box {
-    margin-left: 500px;
+    margin-left: 550px;
     margin-top: 100px;
     font-size: 16px;
     width: 900px; /* Ajusta a largura para ocupar o restante da tela */
@@ -112,16 +103,13 @@ body {
     display: inline-block;
 }
 
-.message-content::after {
-    position: absolute;
-    right: 0;
-    animation: blink 1ms step-end infinite;
+.message-content.hidden {
+    visibility: hidden;
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+.message-content.visible {
+    visibility: visible;
+    transition: visibility 0s linear 0.5s; /* Delay a visibilidade até o final da animação */
 }
 
 .message {
@@ -145,17 +133,59 @@ body {
     background-color: #042c58;
     color: white;
     align-self: flex-start;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
 }
 
-.message img {
+/* Remover imagem de perfil do usuário */
+.message.user img {
+    display: none; /* Oculta a imagem do usuário */
+}
+
+/* Manter imagem de perfil do bot */
+.message.bot img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     margin-right: 10px;
 }
 
-.message-content {
-    white-space: pre-wrap;
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    margin: 0 4px;
+    background-color: #000;
+    border-radius: 50%;
+    animation: blink 1.5s infinite step-start;
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.3s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+.message-content::after {
+    position: absolute;
+    right: 0;
+    animation: blink 1ms step-end infinite;
 }
 
 #helix-ai-symbol {
@@ -267,7 +297,7 @@ body {
     cursor: pointer;
     left: 0;
     height: 18px; /* Tamanho ajustado */
-    width: 40px; /* Tamanho ajustado */
+    width: 38px; /* Tamanho ajustado */
     background-color: #ccc;
     transition: .4s;
     border-radius: 34px;
@@ -276,8 +306,8 @@ body {
 .slider:before {
     position: absolute;
     content: "";
-    height: 11px; /* Tamanho ajustado */
-    width: 11px; /* Tamanho ajustado */
+    height: 12px; /* Tamanho ajustado */
+    width: 12px; /* Tamanho ajustado */
     border-radius: 50%;
     left: 4px;
     bottom: 3px; /* Ajustado para alinhar verticalmente */
@@ -286,11 +316,11 @@ body {
 }
 
 input:checked + .slider {
-    background-color: #005eff;
+    background-color: #007bff;
 }
 
 input:checked + .slider:before {
-    transform: translateX(22px); /* Ajustado para o novo tamanho */
+    transform: translateX(18px);
 }
 
 /* Estilos para o modo escuro */
@@ -338,80 +368,6 @@ input:checked + .slider:before {
 
 .dark-mode .message.bot {
     background-color: #042c58;
-}
-#dark-mode-toggle {
-    margin-top: 70px;
-    display: flex;
-    align-items: center;
-    margin-left: 10px;
-}
-
-#dark-mode-toggle label {
-    font-size: 14px; /* Ajustado para melhorar a legibilidade */
-    color: #fff; /* Cor do texto para contraste com o fundo escuro */
-    display: flex; /* Flexbox para alinhamento do texto e switch */
-    margin-top: -1150px;
-    align-items: center; /* Alinha verticalmente o texto e o switch */
-    margin-left: 10px; /* Espaço entre o símbolo e o texto */
-}
-
-#dark-mode-toggle i {
-    margin-top: -1px;
-    margin-right: 5px;
-}
-
-.switch {
-    position: relative;
-    display: inline-block;
-    margin-top: -1150px;
-    width: 50px; /* Tamanho ajustado */
-    height: 28px; /* Tamanho ajustado */
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
-    cursor: pointer;
-    left: 0;
-    height: 18px; /* Tamanho ajustado */
-    width: 38px; /* Tamanho ajustado */
-    background-color: #ccc;
-    transition: .4s;
-    border-radius: 34px;
-}
-
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 12px; /* Tamanho ajustado */
-    width: 12px; /* Tamanho ajustado */
-    border-radius: 50%;
-    left: 4px;
-    bottom: 3px; /* Ajustado para alinhar verticalmente */
-    background-color: white;
-    transition: .4s;
-}
-
-input:checked + .slider {
-    background-color: #007bff;
-}
-
-input:checked + .slider:before {
-    transform: translateX(18px);
-}
-
-.dark-mode #content {
-    background-color: #1e1e1e;
-    color: #e0e0e0;
-}
-
-.dark-mode #about-section p {
-    color: #e0e0e0;
 }
 
 #content {
@@ -483,12 +439,14 @@ input:checked + .slider:before {
     margin: 100px auto;
     padding: 20px;
 }
+
 .icon-grid {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: center;
 }
+
 .icon-item {
     background-color: #ffffff;
     border: 1px solid #ddd;
@@ -500,20 +458,24 @@ input:checked + .slider:before {
     padding: 60px;
     transition: background-color 0.3s, box-shadow 0.3s;
 }
+
 .icon-item:hover {
     background-color: #f0f0f0;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
+
 .icon-item i {
     font-size: 60px;
     color: #333;
     margin-bottom: 10px;
 }
+
 .icon-item p {
     margin: 0;
     font-size: 18px;
     color: #666;
 }
+
 .icon-item a {
     text-decoration: none;
     color: inherit;
