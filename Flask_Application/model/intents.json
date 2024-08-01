@@ -38,7 +38,6 @@
                 ],
                 "responses": [
                     "Adeus, humano",
-                    "De nada",
                     "Adeus!",
                     "Adeus, tenha um ótimo dia!",
                     "Até logo! Se precisar, estarei por aqui.",
@@ -58,7 +57,7 @@
                     "Como vc se sente",
                     "Como você esta?",
                     "Como foi seu dia?",
-                    "como vc esta"
+                    "como  vc esta"
                 ],
                 "responses": [
                     "Estou bem, obrigado por perguntar!",
@@ -89,6 +88,21 @@
                     "Poderia ser mais específico? Não entendi.",
                     "Desculpe, não consegui captar o que você quer dizer. Pode detalhar mais?",
                     "Desculpe, não consegui encontrar uma resposta para sua pergunta."
+                ]
+            },
+            {
+                "tag": "thanks_response",
+                "patterns" : [
+                    "obrigado",
+                    "valeu",
+                    "era isso",
+                    "resolvido",
+                    "foi resolvido"
+                ],
+                "responses" : [
+                    "Denada, estou aqui se precisar de mais ajuda.",
+                    "Estou a disposição.",
+                    "Diga qual o seu próximo problema para eu resolve-lo."
                 ]
             },
             {
@@ -152,6 +166,7 @@
                     "Estou com problemas para instalar um programa",
                     "Preciso de permissões de administrador",
                     "Não consigo adicionar usuários à rede",
+                    "Permissão para baixar",
                     "Estou recebendo uma mensagem de erro de permissão",
                     "Como faço para obter permissões de administrador?",
                     "A instalação do programa requer permissões de administrador",
@@ -186,6 +201,7 @@
                 "tag": "network_access_issue",
                 "patterns": [
                     "Não consigo acessar a rede",
+                    "problema com a rede cabeada",
                     "A rede está bloqueada",
                     "Estou enfrentando problemas de acesso à rede",
                     "Qual é a solução para problemas de acesso a rede?",
@@ -206,23 +222,23 @@
             {
             "tag": "network_adapter_issue",
             "patterns": [
-                "O adaptador de rede não está sendo reconhecido",
-                "Não vejo o ícone de conexão de rede",
-                "preciso de ajuda com adaptadores",
-                "Problemas com o adaptador de rede",
-                "A rede não é detectada",
-                "O adaptador de rede não aparece",
-                "Como resolver problemas com adaptadores de rede?",
-                "Não consigo me conectar a rede",
-                "O cliente reiniciou o adaptador",
-                "O cliente mexeu no adaptador",
-                "adaptadores",
-                "é um problema com adaptadores",
-                "a rede nao reconhece",
-                "a rede nao aparece",
-                "é um problema de adaptador de rede",
-                "quero saber sobre adaptadores",
-                "adaptadores de rede"
+                    "O adaptador de rede não está sendo reconhecido",
+                    "Não vejo o ícone de conexão de rede",
+                    "preciso de ajuda com adaptadores",
+                    "Problemas com o adaptador de rede",
+                    "A rede não é detectada",
+                    "O adaptador de rede não aparece",
+                    "Como resolver problemas com adaptadores de rede?",
+                    "Não consigo me conectar a rede",
+                    "O cliente reiniciou o adaptador",
+                    "O cliente mexeu no adaptador",
+                    "adaptadores",
+                    "é um problema com adaptadores",
+                    "a rede nao reconhece",
+                    "a rede nao aparece",
+                    "é um problema de adaptador de rede",
+                    "quero saber sobre adaptadores",
+                    "adaptadores de rede"
             ],
             "responses": [
                 "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
@@ -342,15 +358,51 @@
                     ]
                 },
                 {
-                 "tag": "tv_configuration_wifi",
-                 "patterns": [
-                    "Como resolver problemas com o wifi da TV?",
-                    "problemas de conexao na tv",
-                    "tv com problemas de conexao",
-                    "problemas com wifi da tv"
-                 ],
-                 "responses": [
-                        "Pegue o controle da TV, aperte no botão de configurações, vá em Definições, procure algo relacionado a Wifi, conecte-se a Simplifica Visitantes ou TVs recepção."
+                    "tag": "tv_configuration_wifi",
+                    "patterns": [
+                        "Como resolver problemas com o wifi da TV?",
+                        "problemas de conexao na tv",
+                        "tv com problemas de conexao",
+                        "problemas com wifi da tv"
+                    ],
+                    "responses": [
+                            "Pegue o controle da TV, aperte no botão de configurações, vá em Definições, procure algo relacionado a Wifi, conecte-se a Simplifica Visitantes ou TVs recepção."
+                        ]
+                },
+                {
+                    "tag": "what_can_you_do",
+                    "patterns" : [
+                        "O que você é capaz de fazer?",
+                        "o que você faz",
+                        "qual a sua funçao",
+                        "o que voce pode fazer",
+                        "qual o seu papel",
+                        "porque voce existe",
+                        "qual o proposito da sua existencia",
+                        "quais sao as suas habilidades"
+                    ],
+                    "responses" : [
+                        "Eu fui feito para dar assistência a todos que desejarem saber como resolver os problemas de TI.",
+                        "Eu sou capaz de detectar padrões e te dar assistência tecnica nos concertos de problemas na Infraestrutura.",
+                        "Fui feito para agir como ferramenta na melhora do treinamento e assitência nos problemas cotidianos da infraestrutura de TI"
+                    ]
+                },
+                {
+                    "tag" : "who_created_you",
+                    "patterns" : [
+                        "quem e o seu criador",
+                        "quem o criou",
+                        "seu criador",
+                        "quem foi que fez você",
+                        "como te fizeram",
+                        "como fazer voce",
+                        "como fazer uma IA como vc"
+                    ],
+                    "responses" : [
+                        "Meu criador é o Henrique, fui feito com tensorflow para dar assistência as pessoas.",
+                        "Fui feito com tensorflow e meu criador é Henrique.",
+                        "Sou uma IA do modelo Sequencial, fui feito para dar assistência, meu criador é o Henrique.",
+                        "Você pode fazer uma IA como a mim aprendendo sobre as bibliotecas do Tensorflow e os modelos Keras, e meu criador é o Henrique."
                     ]
                 }
             ]

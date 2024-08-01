@@ -82,11 +82,6 @@ if __name__ == '__main__':
     
     def run_app():
         app.run(host='0.0.0.0', debug=True, port=port)
-    
-    # Função para abrir o navegador
-    def open_browser():
-        if not webbrowser._tryorder:
-            webbrowser.open(url)
-    
-    Timer(1, open_browser).start()
+
+    webbrowser.open(url)
     run_app()

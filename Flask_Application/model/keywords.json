@@ -1,7 +1,26 @@
 {
     "keywords": [
         {
-            "keywords" : ["adaptador"],
+            "keywords" : [
+                "olá",
+                "oi",
+                "saudações",
+                "bom dia",
+                "boa tarde"
+            ],
+            "responses" : [
+                    "Olá, como posso ajudar?",
+                    "Oi",
+                    "Olá, o que posso fazer por você?",
+                    "Saudações! Em que posso te ajudar hoje?",
+                    "Oi, Como posso ajuda-lo?"
+            ]
+        },
+        {   
+            "keywords" : [
+                "adaptador", 
+                "cabo"
+            ],
             "responses" : [
                     "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
                     "Caso o adaptador de rede não esteja sendo detectado, acesse o Painel de Controle e vá para Configurações de Rede. Verifique se o adaptador está habilitado e, se necessário, redefina as configurações de rede, inserindo manualmente o IP, DNS e etc na Central de Rede e Compartilhamento.",
@@ -9,29 +28,130 @@
             ]
         },
         {
-            "keywords": ["pasta"],
+            "keywords": [
+                "pasta", 
+                "pasta f",
+                "pasta permissão",
+                "pasta permissoes"
+            ],
             "responses" : [
                     "Se você está enfrentando problemas de acesso a uma pasta do servidor, vá ao Explorador de Arquivos, clique com o botão direito em 'Este Computador', escolha 'Adicionar local de rede', e adicione o caminho da pasta \\\\SRV-FS-01\\fs$\\PMT.",
                     "Para problemas de acesso a pastas, adicione o local da rede no Explorador de Arquivos. Use o caminho apropriado, por exemplo, \\\\SRV-FS-01\\fs$\\PMT, e certifique-se de que o nome está correto.",
-                    "Caso não consiga acessar uma pasta, adicione-a manualmente no Explorador de Arquivos. Insira o caminho da pasta e ajuste o nome conforme necessário para acessar a pasta desejada \\\\SRV-FS-01\\fs$\\PMT."
+                    "Caso não consiga acessar a pasta F (pasta do servidor), adicione-a manualmente no Explorador de Arquivos. Insira o caminho da pasta e ajuste o nome conforme necessário para acessar a pasta desejada \\\\SRV-FS-01\\fs$\\PMT."
             ]
         },
         {
-            "keywords" : ["smb"],
+            "keywords" : [
+                "smb"
+        ],
             "responses" : [
-                "O protocolo SMB (Server Message Block) é um padrão para compartilhamento de recursos em redes, incluindo impressoras e scanners. É utilizado para facilitar a comunicação entre servidores e clientes."
+                    "O protocolo SMB (Server Message Block) é um padrão para compartilhamento de recursos em redes, incluindo impressoras e scanners. É utilizado para facilitar a comunicação entre servidores e clientes."
             ]
         },
         {
-            "keywords" : ["digilitalizar"],
+            "keywords" : [
+                "digitalizar", 
+                "digitalização"
+            ],
             "responses" : [
-                "Se a impressora não está digitalizando corretamente, verifique a configuração da pasta na página web da impressora e o IP configurado para cada usuário. Certifique-se de que o IP está correto e não repetido para evitar problemas de comunicação. Além disso verifique se o SMB 1.0 está habilitado nos recursos do windows"
+                    "Se a impressora não está digitalizando corretamente, verifique a configuração da pasta na página web da impressora e o IP configurado para cada usuário. Certifique-se de que o IP está correto e não repetido para evitar problemas de comunicação. Além disso verifique se o SMB 1.0 está habilitado nos recursos do windows"
             ]
         },
         {
-            "keywords" : ["wifi da TV"],
+            "keywords" : [
+                "wifi da TV", 
+                "wifi TV"
+            ],
             "responses" : [
-                "Pegue o controle da TV, aperte no botão de configurações, vá em Definições, procure algo relacionado a Wifi, conecte-se a Simplifica Visitantes ou TVs recepção."
+                    "Pegue o controle da TV, aperte no botão de configurações, vá em Definições, procure algo relacionado a Wifi, conecte-se a Simplifica Visitantes ou TVs recepção."
+            ]
+        },
+        {
+            "keywords" : [
+                "redes", 
+                "rede",
+                "ethernet", 
+                "internet"
+            ],
+            "responses" : [
+                    "Pode detalhar um pouco mais o seu problema com redes?"
+            ]   
+        },
+        {
+            "keywords" : [
+                "conexao", 
+                "nao conecta",
+                "caiu", 
+                "internet caiu"
+            ],
+            "responses" : [
+                    "Se você está enfrentando problemas de acesso à rede, pode ser necessário inserir um login (PMT) através de um caminho alternativo no navegador para liberar o acesso. Verifique se o Blockbit ou outro firewall não está bloqueando sua conexão.",
+                    "Para problemas de rede, especialmente com o Blockbit ativo, tente usar um caminho alternativo no navegador para inserir o login (PMT). Isso pode ajudar a liberar o acesso à rede.",
+                    "Certifique-se de que não há configurações de firewall ou bloqueios que estejam impedindo o acesso. Utilize um caminho alternativo para inserir o login (PMT) e resolver o problema de acesso à rede."
+            ]
+        },
+        {
+            "keywords" : [ 
+                "me ajuda", 
+                "ajude", 
+                "help", 
+                "dificuldades", 
+                "estar com dificuldades"
+            ],
+            "responses" : [
+                    "Claro, estou aqui para ajudar. Por favor, descreva o problema.",
+                    "Posso tentar ajudar. Qual é o problema?",
+                    "Farei o meu melhor para ajudar. O que você precisa?",
+                    "Com certeza! O que você está enfrentando?",
+                    "Estou pronto para ajudar. Qual é o problema?"
+            ]
+        },
+        {
+            "keywords" : [
+                "permissão",
+                "permissao para baixar",
+                "pede senha PMT",
+                "baixar"
+            ],
+            "responses" : [
+                    "Para resolver problemas de instalação ou alterações que requerem permissões de administrador, você deve fazer login com um usuário que tenha privilégios administrativos. Normalmente, esse usuário é chamado de 'interno.simplifica'. Em seguida, acesse o Painel de Controle, vá para Contas de Usuário, alterar o tipo de conta, procure o usuário que você deseja dar administrador local (insira na caixa), depois clique em verificar nomes. Logo após, clique na opção administrador, e pronto. Deslogue de todos os usuários, logue no usuário que você deu poderes administrativos e tente realizar a ação novamente.",
+                    "Se você está recebendo uma mensagem de erro de permissão, tente deslogar do seu usuário atual e fazer login com o usuário administrador interno.simplifica. Em seguida, acesse o Painel de Controle, vá para Contas de Usuário, alterar o tipo de conta, procure o usuário que você deseja dar administrador local (insira na caixa), depois clique em verificar nomes. Logo após, clique na opção administrador, e pronto. Deslogue de todos os usuários, logue no usuário que você deu poderes administrativos e tente realizar a ação novamente.",
+                    "Verifique se o usuário com o qual você está logado tem permissões de administrador. Se não, tente deslogar do seu usuário atual e fazer login com o usuário administrador interno.simplifica. Em seguida, acesse o Painel de Controle, vá para Contas de Usuário, alterar o tipo de conta, procure o usuário que você deseja dar administrador local (insira na caixa), depois clique em verificar nomes. Logo após, clique na opção administrador, e pronto. Deslogue de todos os usuários, logue no usuário que você deu poderes administrativos e tente realizar a ação novamente."
+            ]
+        },
+        {
+            "keywords" : [
+                "seu nome",
+                "o seu nome"
+            ],
+            "responses" : [
+                    "Meu nome é Helix",
+                    "Sou chamado de Helix",
+                    "Sou Helix, prazer",
+                    "Meu nome é Helix.",
+                    "Sou conhecido como Helix.",
+                    "Eu sou Helix, seu assistente virtual."
+            ]
+        },
+        {
+            "keywords" : [
+                "capaz de fazer", "fazer", "voce pode fazer"
+            ],
+            "responses" : [
+                    "Eu fui feito para dar assistência a todos que desejarem saber como resolver os problemas de TI.",
+                    "Eu sou capaz de detectar padrões e te dar assistência tecnica nos concertos de problemas na Infraestrutura.",
+                    "Fui feito para agir como ferramenta na melhora do treinamento e assitência nos problemas cotidianos da infraestrutura de TI"
+            ]
+        },
+        {
+            "keywords" : [
+                "criador", "quem criou", "quem criou voce", "como criar voce"
+            ],
+            "responses" : [
+                    "Meu criador é o Henrique, fui feito com tensorflow para dar assistência as pessoas.",
+                    "Fui feito com tensorflow e meu criador é Henrique.",
+                    "Sou uma IA do modelo Sequencial, fui feito para dar assistência, meu criador é o Henrique.",
+                    "Você pode fazer uma IA como a mim aprendendo sobre as bibliotecas do Tensorflow e os modelos Keras, e meu criador é o Henrique."
             ]
         }
     ]

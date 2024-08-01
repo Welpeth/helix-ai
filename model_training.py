@@ -24,6 +24,7 @@ def normalize_text(text):
     slang_dict = {
         'config': 'configurações',
         'net': 'internet',
+        'oq' : 'o que',
         'adpt': 'adaptador',
         'pst': 'pasta',
         'vc': 'você',

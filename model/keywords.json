@@ -18,7 +18,8 @@
         },
         {   
             "keywords" : [
-                "adaptador", "cabo"
+                "adaptador", 
+                "cabo"
             ],
             "responses" : [
                     "Se o adaptador de rede não está sendo reconhecido, vá ao Painel de Controle, acesse Redes e Central de Redes e Compartilhamento. Clique em Ethernet, depois em Propriedades, e configure o Protocolo IP (TCP/IPV4).",
@@ -58,8 +59,8 @@
         },
         {
             "keywords" : [
-                    "wifi da TV", 
-                    "wifi TV"
+                "wifi da TV", 
+                "wifi TV"
             ],
             "responses" : [
                     "Pegue o controle da TV, aperte no botão de configurações, vá em Definições, procure algo relacionado a Wifi, conecte-se a Simplifica Visitantes ou TVs recepção."
@@ -67,10 +68,10 @@
         },
         {
             "keywords" : [
-                    "redes", 
-                    "rede",
-                    "ethernet", 
-                    "internet"
+                "redes", 
+                "rede",
+                "ethernet", 
+                "internet"
             ],
             "responses" : [
                     "Pode detalhar um pouco mais o seu problema com redes?"
@@ -78,7 +79,10 @@
         },
         {
             "keywords" : [
-                    "conexao", "nao conecta", "caiu", "internet caiu"
+                "conexao", 
+                "nao conecta",
+                "caiu", 
+                "internet caiu"
             ],
             "responses" : [
                     "Se você está enfrentando problemas de acesso à rede, pode ser necessário inserir um login (PMT) através de um caminho alternativo no navegador para liberar o acesso. Verifique se o Blockbit ou outro firewall não está bloqueando sua conexão.",
@@ -88,11 +92,11 @@
         },
         {
             "keywords" : [ 
-                    "me ajuda", 
-                    "ajude", 
-                    "help", 
-                    "dificuldades", 
-                    "estar com dificuldades"
+                "me ajuda", 
+                "ajude", 
+                "help", 
+                "dificuldades", 
+                "estar com dificuldades"
             ],
             "responses" : [
                     "Claro, estou aqui para ajudar. Por favor, descreva o problema.",
@@ -113,6 +117,41 @@
                     "Para resolver problemas de instalação ou alterações que requerem permissões de administrador, você deve fazer login com um usuário que tenha privilégios administrativos. Normalmente, esse usuário é chamado de 'interno.simplifica'. Em seguida, acesse o Painel de Controle, vá para Contas de Usuário, alterar o tipo de conta, procure o usuário que você deseja dar administrador local (insira na caixa), depois clique em verificar nomes. Logo após, clique na opção administrador, e pronto. Deslogue de todos os usuários, logue no usuário que você deu poderes administrativos e tente realizar a ação novamente.",
                     "Se você está recebendo uma mensagem de erro de permissão, tente deslogar do seu usuário atual e fazer login com o usuário administrador interno.simplifica. Em seguida, acesse o Painel de Controle, vá para Contas de Usuário, alterar o tipo de conta, procure o usuário que você deseja dar administrador local (insira na caixa), depois clique em verificar nomes. Logo após, clique na opção administrador, e pronto. Deslogue de todos os usuários, logue no usuário que você deu poderes administrativos e tente realizar a ação novamente.",
                     "Verifique se o usuário com o qual você está logado tem permissões de administrador. Se não, tente deslogar do seu usuário atual e fazer login com o usuário administrador interno.simplifica. Em seguida, acesse o Painel de Controle, vá para Contas de Usuário, alterar o tipo de conta, procure o usuário que você deseja dar administrador local (insira na caixa), depois clique em verificar nomes. Logo após, clique na opção administrador, e pronto. Deslogue de todos os usuários, logue no usuário que você deu poderes administrativos e tente realizar a ação novamente."
+            ]
+        },
+        {
+            "keywords" : [
+                "seu nome",
+                "o seu nome"
+            ],
+            "responses" : [
+                    "Meu nome é Helix",
+                    "Sou chamado de Helix",
+                    "Sou Helix, prazer",
+                    "Meu nome é Helix.",
+                    "Sou conhecido como Helix.",
+                    "Eu sou Helix, seu assistente virtual."
+            ]
+        },
+        {
+            "keywords" : [
+                "capaz de fazer", "fazer", "voce pode fazer"
+            ],
+            "responses" : [
+                    "Eu fui feito para dar assistência a todos que desejarem saber como resolver os problemas de TI.",
+                    "Eu sou capaz de detectar padrões e te dar assistência tecnica nos concertos de problemas na Infraestrutura.",
+                    "Fui feito para agir como ferramenta na melhora do treinamento e assitência nos problemas cotidianos da infraestrutura de TI"
+            ]
+        },
+        {
+            "keywords" : [
+                "criador", "quem criou", "quem criou voce", "como criar voce"
+            ],
+            "responses" : [
+                    "Meu criador é o Henrique, fui feito com tensorflow para dar assistência as pessoas.",
+                    "Fui feito com tensorflow e meu criador é Henrique.",
+                    "Sou uma IA do modelo Sequencial, fui feito para dar assistência, meu criador é o Henrique.",
+                    "Você pode fazer uma IA como a mim aprendendo sobre as bibliotecas do Tensorflow e os modelos Keras, e meu criador é o Henrique."
             ]
         }
     ]
