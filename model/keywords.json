@@ -135,17 +135,24 @@
         },
         {
             "keywords" : [
-                "capaz de fazer", "fazer", "voce pode fazer"
+                "capaz de fazer", 
+                "fazer", 
+                "faz",
+                "oq vc faz",
+                "voce pode fazer"
             ],
             "responses" : [
                     "Eu fui feito para dar assistência a todos que desejarem saber como resolver os problemas de TI.",
                     "Eu sou capaz de detectar padrões e te dar assistência tecnica nos concertos de problemas na Infraestrutura.",
-                    "Fui feito para agir como ferramenta na melhora do treinamento e assitência nos problemas cotidianos da infraestrutura de TI"
+                    "Fui feito para agir como ferramenta na melhora do treinamento dos servidores do Simplifica assim como na assitência nos problemas cotidianos da infraestrutura de TI"
             ]
         },
         {
             "keywords" : [
-                "criador", "quem criou", "quem criou voce", "como criar voce"
+                "criador", 
+                "quem criou",
+                 "quem criou voce", 
+                 "como criar voce"
             ],
             "responses" : [
                     "Meu criador é o Henrique, fui feito com tensorflow para dar assistência as pessoas.",
@@ -156,7 +163,9 @@
         },
         {
             "keywords" : [
-                "simplifica timbó", "o que é o simplifica", "oq e o simplifica"
+                "simplifica timbó", 
+                "o que é o simplifica", 
+                "oq e o simplifica"
             ],
             "responses" : [
                 "Simplifica Timbó é o nome da nova unidade de atendimento ao cidadão do Município de Timbó /SC. Prioriza a gestão por resultados, visando ampliar e modernizar o acesso aos serviços públicos, focando no cidadão. Conta com a integração de vários órgãos da administração pública municipal e parceria com demais órgãos da administração pública da esfera estadual e federal. Essa iniciativa tem como objetivo a redução da burocracia, das filas e do tempo de espera para atendimento e consequentemente a redução de esforço do cidadão que pode encontrar todos os serviços em um só lugar."
@@ -164,7 +173,9 @@
         },
         {
             "keywords" : [
-                "qual a sua cidade", "da onde você é", "qual a sua sede"
+                "qual a sua cidade",
+                 "da onde você é",
+                  "qual a sua sede"
             ],
             "responses" : [
                 "Eu fui feito para atuar na empresa Simplifica, original de Timbó, SC - Brasil."

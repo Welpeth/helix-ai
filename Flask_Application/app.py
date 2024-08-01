@@ -1,8 +1,8 @@
-from flask import Flask, request, jsonify, render_template
 import os
 import webbrowser
-from threading import Timer
-
+from threading import Thread
+import time
+from flask import Flask, request, jsonify, render_template
 from utils import get_response, predict_class
 
 app = Flask(__name__, template_folder='templates', static_folder='static')
@@ -75,13 +75,18 @@ def chat():
         'response': response
     })
 
+def open_browser(url):
+    webbrowser.open(url)
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
-    
     url = f'http://127.0.0.1:{port}/'
-    
-    def run_app():
-        app.run(host='0.0.0.0', debug=True, port=port)
 
-    webbrowser.open(url)
-    run_app()
+    def run_app():
+        app.run(host='0.0.0.0', port=port, use_reloader=False)
+
+    server_thread = Thread(target=run_app)
+    server_thread.start()
+
+    time.sleep(1) 
+    open_browser(url)

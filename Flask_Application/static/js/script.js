@@ -14,8 +14,6 @@ $(document).ready(function() {
         }
     });
 
-    
-
     // Envia a mensagem ao clicar no botão
     $('#send-button').click(function() {
         sendMessage();
@@ -48,13 +46,19 @@ $(document).ready(function() {
                 contentType: 'application/json',
                 data: JSON.stringify({ message: message }),
                 success: function(data) {
-
+                    // Checa se a resposta é a mensagem inicial
+                    const initialMessage = "Olá eu sou Helix, seu assistente virtual.";
                     const botMessageDiv = createMessage('', true, true); 
                     $('#chat-messages').append(botMessageDiv);
                     $('#chat-messages').scrollTop($('#chat-messages')[0].scrollHeight);
 
-                    updateMessageContent(botMessageDiv, data.response);
-                    typeMessage(botMessageDiv);
+                    if (data.response === initialMessage) {
+                        updateMessageContent(botMessageDiv, data.response);
+                        $(botMessageDiv).find('.typing-indicator').remove(); // Remove o indicador de digitação
+                    } else {
+                        updateMessageContent(botMessageDiv, data.response);
+                        typeMessage(botMessageDiv); // Usa animação de digitação para outras mensagens
+                    }
                 },
                 error: function(xhr, status, error) {
                     console.error('Erro ao enviar a mensagem:', error);
@@ -95,19 +99,17 @@ $(document).ready(function() {
         return messageDiv;
     }
 
-   
     function updateMessageContent(messageDiv, content) {
         $(messageDiv).find('.message-content').text(content);
     }
 
-   
     function typeMessage(messageDiv) {
         const messageContentDiv = $(messageDiv).find('.message-content');
         const typingIndicatorDiv = $(messageDiv).find('.typing-indicator');
         const text = $(messageContentDiv).text(); // Usa o texto já definido
         let i = 0;
 
-        $(messageContentDiv).text(''); 
+        $(messageContentDiv).text(''); // Limpa o texto atual
 
         function type() {
             if (i < text.length) {
@@ -124,7 +126,6 @@ $(document).ready(function() {
         type();
     }
 
-   
     function escapeHtml(text) {
         return text
             .replace(/&/g, '&amp;')

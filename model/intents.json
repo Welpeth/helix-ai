@@ -383,8 +383,8 @@
                     ],
                     "responses" : [
                         "Eu fui feito para dar assistência a todos que desejarem saber como resolver os problemas de TI.",
-                        "Eu sou capaz de detectar padrões e te dar assistência tecnica nos concertos de problemas na Infraestrutura.",
-                        "Fui feito para agir como ferramenta na melhora do treinamento e assitência nos problemas cotidianos da infraestrutura de TI"
+                        "Eu sou capaz de detectar padrões e te dar assistência técnica nos concertos de problemas na Infraestrutura.",
+                        "Fui feito para agir como ferramenta na melhora do treinamento dos servidores do Simplifica assim como na assitência nos problemas cotidianos da infraestrutura de TI"
                     ]
                 },
                 {
@@ -396,6 +396,7 @@
                         "quem foi que fez você",
                         "como te fizeram",
                         "como fazer voce",
+                        "oq vc faz",
                         "como fazer uma IA como vc"
                     ],
                     "responses" : [
@@ -406,6 +407,7 @@
                     ]
                 },
                 {
+                    "tag" : "what_is_your_workplace",
                     "patterns" : [
                         "o que é o simplifica",
                         "oq é o simplifica",
@@ -417,6 +419,7 @@
                     ]
                 },
                 {
+                    "tag" : "where_is_your_workplace",
                     "patterns" : [
                         "aonde é a sua sede",
                         "qual é a sua empresa",

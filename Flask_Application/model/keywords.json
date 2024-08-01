@@ -153,6 +153,22 @@
                     "Sou uma IA do modelo Sequencial, fui feito para dar assistência, meu criador é o Henrique.",
                     "Você pode fazer uma IA como a mim aprendendo sobre as bibliotecas do Tensorflow e os modelos Keras, e meu criador é o Henrique."
             ]
+        },
+        {
+            "keywords" : [
+                "simplifica timbó", "o que é o simplifica", "oq e o simplifica"
+            ],
+            "responses" : [
+                "Simplifica Timbó é o nome da nova unidade de atendimento ao cidadão do Município de Timbó /SC. Prioriza a gestão por resultados, visando ampliar e modernizar o acesso aos serviços públicos, focando no cidadão. Conta com a integração de vários órgãos da administração pública municipal e parceria com demais órgãos da administração pública da esfera estadual e federal. Essa iniciativa tem como objetivo a redução da burocracia, das filas e do tempo de espera para atendimento e consequentemente a redução de esforço do cidadão que pode encontrar todos os serviços em um só lugar."
+            ]
+        },
+        {
+            "keywords" : [
+                "qual a sua cidade", "da onde você é", "qual a sua sede"
+            ],
+            "responses" : [
+                "Eu fui feito para atuar na empresa Simplifica, original de Timbó, SC - Brasil."
+            ]
         }
     ]
 }
