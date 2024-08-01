@@ -44,7 +44,7 @@ Uma IA criada com TensorFlow para ser usada em ambientes onde ela possa detectar
     python app.py
     ```
 
-6. **Abra no navegador**: Com tudo pronto e o app.py funcionando perfeitamente abra no localhost:
+6. **Abra no navegador**: Com tudo pronto e o app.py funcionando perfeitamente ele abrirá automaticamente no localhost:
 
     ```
     127.0.0.1:5000
